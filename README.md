@@ -1,10 +1,10 @@
-# [Título del trabajo]
+# ESCAPE ROOM LEGENDS
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+El proyecto consiste en un scape room , en este habra que superar varias mapas y pruebas para completarlo
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Jose Enrique,Espinoza Garcia,joseenriqueespinoza99
 
 ## Objetivos del trabajo
 
