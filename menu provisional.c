@@ -2,7 +2,7 @@
 
 int main()
 {
-    printf("Si quieres salir del programa pulsa 'Q' en cualquiera de los scanfs\n\n");
+    printf("Si quieres salir del programa pulsa 'Q' en cualquiera de los scanfs, para responder, use 'Si' y 'No'\n\n");
     char respuesta;
     printf("Quieres entrar en la casa?\n");
     while((respuesta!='N')&&(respuesta!='S'))
