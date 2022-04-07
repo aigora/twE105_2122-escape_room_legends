@@ -8,6 +8,8 @@ Jose Enrique Espinoza Garcia,joseenriqueespinoza99
 
 Luis Peñaranda del Mazo, Luispdelmazo
 
+Alejandro Beltran Suarez, alejandro.beltran.suarez
+
 ## Objetivos del trabajo
 
 [Lista de los objetivos que se persiguen con el trabajo propuesto.]
