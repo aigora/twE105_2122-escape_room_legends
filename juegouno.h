@@ -13,14 +13,15 @@ void laberinto(int,int,int,int,int,int);
 void posicion2(int,int);
 void printfdelay(char[] , float);
 
+void casa(void );
+void oscuridad1(void );
+void habitacion(void );
+void habitacion1(void );
+void estanteria(void );
+void mapa(void );
+void puerta(void );
+void oscuridad(void );
 
-void casa();
-void oscuridad1();
-void habitacion();
-void estanteria();
-void mapa();
-void puerta();
-void oscuridad();
 // void delay( float );
 
 #endif // JUEGOUNO_H_INCLUDED

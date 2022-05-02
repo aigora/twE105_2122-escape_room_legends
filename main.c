@@ -31,7 +31,8 @@ delay(1);
 laberinto(1,39,0,0,0,0);
 posicion2(1,39);
 delay(1);
- habitacion();
+habitacion();
+habitacion1();
 return 0 ;
 }
 

@@ -321,9 +321,9 @@ void habitacion(void )
      char ans2[]="Estanteria";
       char ans3[]="Mapa";
      int hint=0;
-             printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion, esta vez si esta iluminada ...\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion, esta vez si esta iluminada ...\n");
              delay(3);
-              printf("                                                         _______________________ \n");
+        printf("                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
     printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||                   |||   ************  ||| \n");
@@ -371,11 +371,74 @@ void habitacion(void )
     }
     if(strcmp(ans3, r1) == 0)
     {
-     mapaalex();
+     mapa();
     }
 
+     }
 
- }
+void habitacion1(void )
+ {
+     char r1[50];
+     char finn;
+     char ans1[]="Puerta";
+     char ans2[]="Estanteria";
+      char ans3[]="Mapa";
+     int hint=0;
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("                                                         _______________________ \n");
+    printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
+    printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
+    printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||                   |||   ************  ||| \n");
+    printf("         |||||][][][][][][][][][][||||                   |||  ************** ||| \n");
+    printf("         |||||][][][][][][][][][][||||                   |||     **********  |||\n");
+    printf("         |||||][][][][][][][][][][||||                   |||     *********   |||\n");
+    printf("         |||||][][][][][][][][][][||||                   |||     **********  |||\n");
+    printf("         |||||][][][][][][][][][][||||                   |||       *****     |||\n");
+    printf("         |||||][][][][][][][][][][||||                   ||/////////\\\\\\\\\\\\\\\\\\\\||\n");
+    printf("         |||||][][][][][][][][][][|||| \n");
+    printf("         |||||][][][][][][][][][][|||| \n");
+    printf("         |||||][][][][][][][][][][|||| \n");
+    printf("         |||||][][][][][][][]@@@][|||| \n");
+    printf("         |||||][][][][][][][]@@@][||||                \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("_________|||||][][][][][][][][][][||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
+    delay(3);
+    printf("... Delante tuya ves una puerta, una estanteria y un mapa en la pared ...\n\n");
+    delay(3);
+    printf("Que deseas inspeccionar?\n\n");
+    delay(1);
+             while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1) != 0)&&(strcmp(ans3, r1) != 0))
+    {
+        scanf("%s",r1);
+        hint++;
+        if(hint==3)
+            printf("\nOpciones:\n\nPuerta\nEstanteria\nMapa\n\n");
+    }
+
+    if(strcmp(ans2, r1) == 0)
+    {
+      estanteria();
+    }
+    else
+    if(strcmp(ans1, r1) == 0)
+    {
+      puerta();
+
+    }
+    if(strcmp(ans3, r1) == 0)
+    {
+     mapa();
+    }
+
+     }
+
+
 void estanteria(void )
 {
     int res=0;
@@ -394,22 +457,22 @@ while(res!=18)
       printf("\n ... Abres el libro de Andalucia, y ves que en la primera pagina esta escrito en grande el numero '1' ... \n");
       break;
       case 2:
-      printf("\n... Abres el libro de Aragon, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Aragon, y ves que en la primera pagina esta escrito en grande el numero '8' ...\n");
       break;
       case 3:
-      printf("\n... Abres el libro de Islas Baleares, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Islas Baleares, y ves que en la primera pagina esta escrito en grande el numero '5' ...\n");
       break;
       case 4:
-      printf("\n... Abres el libro de Canarias, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Canarias, y ves que en la primera pagina esta escrito en grande el numero '2' ...\n");
       break;
       case 5:
-      printf("\n... Abres el libro de Cantabria, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Cantabria, y ves que en la primera pagina esta escrito en grande el numero '9' ...\n");
       break;
       case 6:
-      printf("\n... Abres el libro de Castilla La Mancha, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Castilla La Mancha, y ves que en la primera pagina esta escrito en grande el numero '4' ...\n");
       break;
       case 7:
-      printf("\n... Abres el libro de Castilla y Leon, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Castilla y Leon, y ves que en la primera pagina esta escrito en grande el numero '1' ...\n");
       break;
       case 8:
       printf("\n... Abres el libro de Cataluna, y ves que en la primera pagina esta escrito en grande el numero '4' ... \n");
@@ -418,35 +481,35 @@ while(res!=18)
       printf("\n... Abres el libro de Madrid, y ves que en la primera pagina esta escrito en grande el numero '9' ... \n");
       break;
       case 10:
-      printf("\n... Abres el libro de Navarra, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Navarra, y ves que en la primera pagina esta escrito en grande el numero '6' ...\n");
       break;
       case 11:
       printf("\n... Abres el libro de Valencia, y ves que en la primera pagina esta escrito en grande el numero '2' ... \n");
       break;
       case 12:
-      printf("\n... Abres el libro de Extremadura, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Extremadura, y ves que en la primera pagina esta escrito en grande el numero '3' ...\n");
       break;
       case 13:
-      printf("\n... Abres el libro de Galicia, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Galicia, y ves que en la primera pagina esta escrito en grande el numero '3' ...\n");
       break;
       case 14:
-      printf("\n... Abres el libro de Pais Vasco, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Pais Vasco, y ves que en la primera pagina esta escrito en grande el numero '9' ...\n");
       break;
       case 15:
-      printf("\n... Abres el libro de Asturias, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Asturias, y ves que en la primera pagina esta escrito en grande el numero '8' ...\n");
       break;
       case 16:
-      printf("\n... Abres el libro de Murcia, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de Murcia, y ves que en la primera pagina esta escrito en grande el numero '6' ...\n");
       break;
       case 17:
-      printf("\n... Abres el libro de La Rioja, y ves que no hay nada destacable sobre el libro ...\n");
+      printf("\n... Abres el libro de La Rioja, y ves que en la primera pagina esta escrito en grande el numero '5' ...\n");
       break;
   }
 
 }
-habitacion();
+habitacion1();
 }
-void mapaalex()
+void mapa(void )
 {
     char a;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Te acercas al mapa en la pared*");
@@ -577,14 +640,14 @@ delay(3);
             delay(3);
             printf("//Pulsa cualquier tecla para que la animacion progrese// \n\n");
             scanf(" %c",&a);
-            habitacion();
+            habitacion1();
 
 }
 void puerta(void )
 {
     char r1,r2,a;
     int c1=0,c2=0,c3=0,c4=0;
-    printf("                                           \n");
+    printf("\n\n\n\n\n\n                                           \n");
     printf("         _____________________________                   \n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
     printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||    \n");
@@ -606,14 +669,18 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||            \n");
     printf("         |||||][][][][][][][][][][||||            \n");
     printf("         |||||][][][][][][][][][][||||       \n");
-    printf("         |||||][][][][][][][][][][||||   \n");
-    printf("... Inspeccionas la puerta y ves que esta cerrada con un candado*\n*Quieres inspeccionar el candado? ...\n");
-    while((r1!='N')&&(r1!='S'))
+    printf("         |||||][][][][][][][][][][||||   \n\n\n");
+    delay(3);
+    printf("\n\n... Inspeccionas la puerta y ves que esta cerrada con un candado ...\n");
+    delay(3);
+    printf("... Quieres inspeccionar el candado? ...\n");
+    delay(3);
+    while(((r1!='N')&&(r1!='S'))||((r2!='o')&&(r2!='i')))
       scanf(" %c%c",&r1,&r2);
 
     if((r1=='N')&&(r2=='o'))
     {
-         habitacion();
+         habitacion1();
     }
    if((r1=='S')&&(r2=='i'))
     {
@@ -640,10 +707,12 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][    \n",c4);
     printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
     printf("         |||||][][][][][][][][][][||||   \n\n");
+    delay(3);
         printf("... Inspeccionas el candado y ves que tiene 9999 combinaciones diferentes ...\n");
 
         while((c1!=1492)&&(c1!=1800))
         {
+            delay(3);
         printf("\n\n... Puedes probar todas las combinaciones que quieras, cuando acabes escribe '1800' ...\n\n");
         scanf(" %i",&c1);
         if(c1==1492)
@@ -677,7 +746,7 @@ void puerta(void )
         }
         else
             if(c1==1800)
-            habitacion();
+            habitacion1();
             else
             {
                 printf(" \n\n\n\n\n\n\n\n\n\n");
@@ -801,6 +870,7 @@ void oscuridad1(void )
 
 
     }
+
 /*
 void delay( float seconds)
 {
