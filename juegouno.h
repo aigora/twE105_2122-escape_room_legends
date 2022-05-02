@@ -12,5 +12,15 @@ void candado(int);
 void laberinto(int,int,int,int,int,int);
 void posicion2(int,int);
 void printfdelay(char[] , float);
-void delay(float);
+
+
+void casa();
+void oscuridad1();
+void habitacion();
+void estanteria();
+void mapa();
+void puerta();
+void oscuridad();
+// void delay( float );
+
 #endif // JUEGOUNO_H_INCLUDED
