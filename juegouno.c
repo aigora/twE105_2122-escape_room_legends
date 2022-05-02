@@ -371,7 +371,7 @@ void habitacion(void )
     }
     if(strcmp(ans3, r1) == 0)
     {
-     mapa();
+     mapa1();
     }
 
      }
@@ -433,7 +433,7 @@ void habitacion1(void )
     }
     if(strcmp(ans3, r1) == 0)
     {
-     mapa();
+     mapa1();
     }
 
      }
@@ -509,7 +509,7 @@ while(res!=18)
 }
 habitacion1();
 }
-void mapa(void )
+void mapa1(void )
 {
     char a;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Te acercas al mapa en la pared*");
