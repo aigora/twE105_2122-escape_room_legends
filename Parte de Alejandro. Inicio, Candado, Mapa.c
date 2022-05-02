@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+#include <time.h>
 
 void casa(void );
 void oscuridad1(void );
@@ -10,6 +10,7 @@ void estanteria(void );
 void mapa(void );
 void puerta(void );
 void oscuridad(void );
+void delay( float );
 
 int main()
 {
@@ -29,7 +30,8 @@ void habitacion(void )
      char ans2[]="Estanteria";
       char ans3[]="Mapa";
      int hint=0;
-             printf("Entras en una nueva habitacion, esta vez si está iluminada.\n");
+             printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion, esta vez si está iluminada ...\n");
+             delay(3);
               printf("                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
@@ -53,9 +55,11 @@ void habitacion(void )
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("_________|||||][][][][][][][][][][||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
-
-    printf("Delante tuya ves una puerta, una estanteria y un mapa en la pared.\n\n");
+    delay(3);
+    printf("... Delante tuya ves una puerta, una estanteria y un mapa en la pared ...\n\n");
+    delay(3);
     printf("Que deseas inspeccionar?\n\n");
+    delay(1);
              while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1) != 0)&&(strcmp(ans3, r1) != 0))
     {
         scanf("%s",r1);
@@ -154,8 +158,9 @@ habitacion();
 void mapa(void )
 {
     char a;
-    printf("*Te acercas al mapa en la pared*\n\n");
-    printf("                           ****        *        *         ****\n \
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Te acercas al mapa en la pared*");
+    delay(3);
+    printf("\n\n\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
                     *******************************************************\n\
                      ****************************************************\n\
@@ -175,14 +180,15 @@ void mapa(void )
                              *****************************\n\
                                **   *******************\n\
                                      *******\n\
-                                      ****\n\n");
-
+                                      ****\n");
+    delay(3);
     printf("*Se puede ver claramente que es un mapa de Espanna*\n");
-    printf("*Obserbas atentamente el mapa en la pared*\n");
+    delay(3);
+    printf("*Ovserbas atentamente el mapa en la pared*\n");
+    delay(3);
     printf("*Una luz detras del mapa se enciende*\n");
-    printf("//Pulsa cualquier tecla para que la animacion progrese// \n\n");
-    scanf(" %c",&a);
-    printf("                           ****        *        *         ****\n \
+    delay(3);
+    printf("\n\n\n\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
                     *******************************************************\n\
                      ****************************************************\n\
@@ -202,11 +208,10 @@ void mapa(void )
                              //////////////////////////////////\n\
                                //   /////////////////////\n\
                                      ///////\n\
-                                      ////\n\n");
+                                      ////\n\n\n\n");
 
-    printf("\n\n\n//Pulsa cualquier tecla para que la animacion progrese// \n\n");
-    scanf(" %c",&a);
-    printf("                           ****        *        *         ****\n \
+    delay(3);
+    printf("\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** //  //   /////\n \
                     ******************************************//////////////\n\
                      ********************************************/////////\n\
@@ -226,12 +231,11 @@ void mapa(void )
                              *****************************\n\
                                **   *******************\n\
                                      *******\n\
-                                      ****\n\n");
+                                      ****\n\n\n\n");
 
-printf("\n\n\n//Pulsa cualquier tecla para que la animacion progrese// \n\n");
-    scanf(" %c",&a);
+delay(3);
 
-printf("                           ****        *        *         ****\n \
+printf("\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
                     *******************************************************\n\
                      ****************************************************\n\
@@ -251,11 +255,10 @@ printf("                           ****        *        *         ****\n \
                              *****************************\n\
                                **   *******************\n\
                                      *******\n\
-                                      ****\n\n");
+                                      ****\n\n\n\n");
 
-printf("\n\n\n//Pulsa cualquier tecla para que la animacion progrese// \n\n");
-    scanf(" %c",&a);
-    printf("                           ****        *        *         ****\n \
+delay(3);
+    printf("\n\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
                     *******************************************************\n\
                      ****************************************************\n\
@@ -276,9 +279,11 @@ printf("\n\n\n//Pulsa cualquier tecla para que la animacion progrese// \n\n");
                                **   *******************\n\
                                      *******\n\
                                       ****\n\n");
-
-            printf("*El Mapa se vuelve quieto* \n\n");
-            printf("*Te alejas del cuadro* \n\n");
+delay(3);
+            printf("... El Mapa se vuelve quieto ... \n\n");
+            delay(3);
+            printf("... Te alejas del cuadro ... \n\n");
+            delay(3);
             printf("//Pulsa cualquier tecla para que la animacion progrese// \n\n");
             scanf(" %c",&a);
             habitacion();
@@ -348,7 +353,7 @@ void puerta(void )
 
         while((c1!=1492)&&(c1!=1800))
         {
-        printf("\n\n*Puedes probar todas las conmbinaciones que quieras, cuando acabes escribe '1800'*\n\n");
+        printf("\n\n*Puedes probar todas las combinaciones que quieras, cuando acabes escribe '1800'*\n\n");
         scanf(" %i",&c1);
         if(c1==1492)
         {
@@ -375,7 +380,7 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][    \n",((c1%1000)%100)%10);
     printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
     printf("         |||||][][][][][][][][][][||||   \n\n");
-    scanf(" %c",&a);
+    delay(3);
     oscuridad();
     break;
         }
@@ -418,7 +423,7 @@ void puerta(void )
 
 void oscuridad(void )
 {
-    printf("                                                         _______________________ \n");
+    printf(" \n                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
     printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||                   |||   ************  ||| \n");
@@ -481,8 +486,7 @@ void casa(void )
         hint++;
         if(hint==3)
         {
-          printf("-Entro-");
-          break;
+          printf("-Entro-\n\n");
         }
 
     }
@@ -494,23 +498,22 @@ void oscuridad1(void )
      char ans2[]="Voy";
 
      int hint=0;
-     sleep(1);
+     delay(3);
      printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-     sleep(1);
+     delay(3);
      printf("... Oscuridad ...\n");
-     sleep(1);
+     delay(3);
      printf("... Se escucha el sonido del cerrojo cerrandose detras de ti ...\n");
-     sleep(1);
-     printf("Que haces?\n");
-    while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1) != 0))
-    {
-        scanf("%s",r1);
-        hint++;
-        if(hint==3)
-        {
-          printf("-Entro-");
-          break;
-        }
+     delay(3);
+     printf("... Que haces? ...\n");
+     delay(3);
+
 
     }
- }
+
+void delay( float seconds)
+{
+    int milli_seconds = 1000 * seconds;
+    clock_t start_time = clock();
+    while (clock() < start_time + milli_seconds);
+}
