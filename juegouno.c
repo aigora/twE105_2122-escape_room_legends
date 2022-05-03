@@ -60,10 +60,10 @@ printfdelay("para abrir el candado  tendras que adivinar una clave de tres digit
 printfdelay("al lado de cada digito introducido aparecera una luz.\n\n" , 3);
 //dejaremos mas tiempo entre instrucciones ya que el usuariom necesita tener claro como funciona el reto del candado
 printf("si el digito es correcto se encendera esta luz: %c " , 176);
-delay(6);
-printf("\nsi el digito se encuentra en la clave pero no en la posicion adecuada, aparecera esta otra luz:%c\n"  , 178);
-delay(5);
-printfdelay("de lo contrario, si el digito no aparece en la clave del candado, no se encendera ninguna luz"  ,5);
+delay(3);
+printf("\n\nsi el digito se encuentra en la clave pero no en la posicion adecuada, aparecera esta otra luz:%c\n\n"  , 178);
+delay(3);
+printfdelay("de lo contrario, si el digito no aparece en la clave del candado, no se encendera ninguna luz"  ,6);
 //entre los parentesis de la funcion candado indicamos cual va a ser la clave a adivinar, en este caso 215 pero esta podria ser facilmente cambiada
 //y procedemos con la prueba del candado , una vez esta acabe el usuario pasara a la segunda fase del escape room
 candado(215);
@@ -311,18 +311,43 @@ void printfdelay(char frase[] , float seconds)
 
 
 //////////////////////////
+void oscuridad(void )
+{
+    printf(" \n                                                         _______________________ \n");
+    printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
+    printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
+    printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||                   |||   ************  ||| \n");
+    printf("         |||||                    ||||                   |||  ************** ||| \n");
+    printf("         |||||                    ||||                   |||     **********  |||\n");
+    printf("         |||||                    ||||                   |||     *********   |||\n");
+    printf("         |||||                    ||||                   |||     **********  |||\n");
+    printf("         |||||                    ||||                   |||       *****     |||\n");
+    printf("         |||||                    ||||                   ||/////////\\\\\\\\\\\\\\\\\\\\||\n");
+    printf("         |||||                    |||| \n");
+    printf("         |||||                    |||| \n");
+    printf("         |||||                    |||| \n");
+    printf("         |||||                    |||| \n");
+    printf("         |||||                    ||||                \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
+    printf("_________|||||____________________||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
 
+}
 
 void habitacion(void )
  {
      char r1[50];
-     char finn;
-     char ans1[]="Puerta";
-     char ans2[]="Estanteria";
-      char ans3[]="Mapa";
+     char ans1[]="PUERTA";
+     char ans2[]="ESTANTERIA";
+      char ans3[]="MAPA";
      int hint=0;
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion, esta vez si esta iluminada ...\n");
-             delay(3);
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n");
+             delay(2);
         printf("                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
@@ -346,14 +371,13 @@ void habitacion(void )
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("_________|||||][][][][][][][][][][||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
-    delay(3);
-    printf("... Delante tuya ves una puerta, una estanteria y un mapa en la pared ...\n\n");
-    delay(3);
-    printf("Que deseas inspeccionar?\n\n");
-    delay(1);
+    printf("... Delante tuya hay una puerta, una estanteria y un mapa en la pared ...\n\n");
+    delay(2);
+    printf("Que deseas inspeccionar?                                                            opciones: puerta, estanteria, mapa\n\n");
              while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1) != 0)&&(strcmp(ans3, r1) != 0))
     {
         scanf("%s",r1);
+        strupr(r1);
         hint++;
         if(hint==3)
             printf("\nOpciones:\n\nPuerta\nEstanteria\nMapa\n\n");
@@ -379,10 +403,9 @@ void habitacion(void )
 void habitacion1(void )
  {
      char r1[50];
-     char finn;
-     char ans1[]="Puerta";
-     char ans2[]="Estanteria";
-      char ans3[]="Mapa";
+     char ans1[]="PUERTA";
+     char ans2[]="ESTANTERIA";
+      char ans3[]="MAPA";
      int hint=0;
         printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         printf("                                                         _______________________ \n");
@@ -408,14 +431,12 @@ void habitacion1(void )
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("         |||||][][][][][][][][][][||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
     printf("_________|||||][][][][][][][][][][||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
-    delay(3);
-    printf("... Delante tuya ves una puerta, una estanteria y un mapa en la pared ...\n\n");
-    delay(3);
-    printf("Que deseas inspeccionar?\n\n");
-    delay(1);
+    printf("... Delante tuya hay una puerta, una estanteria y un mapa en la pared ...\n\n");
+    printf("Que deseas inspeccionar?                                                            opciones: puerta, estanteria, mapa\n\n");
              while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1) != 0)&&(strcmp(ans3, r1) != 0))
     {
         scanf("%s",r1);
+        strupr(r1);
         hint++;
         if(hint==3)
             printf("\nOpciones:\n\nPuerta\nEstanteria\nMapa\n\n");
@@ -444,10 +465,9 @@ void estanteria(void )
     int res=0;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n... Inspeccionas la estanteria y ves que la estanteria esta compuesta por 17 libros,\
 cada una de ellas perteneciente a \nuna comunidad autonoma diferente ...\n");
-    printf("\n\n //Puedes sacar cada libro de la estanteria e inspeccionarlo. Si quieres volver al plano general de la habitacion\
- pulsa \n'18'//\n");
+    printf("\n\n //Puedes sacar cada libro de la estanteria e inspeccionarlo. Si quieres volver pulsa '18'//\n");
     printf("1-Andalucia\n2-Aragon\n3-Islas Baleares\n4-Canarias\n5-Cantabria\n6-Castilla La Mancha\n7-Castilla y Leon\
-\n8-Cataluna\n9-Madrid\n10-Navarra\n11-Valencia\n12-Extremadura\n13-Galicia\n14-Pais Vasco\n15-Asturias\n16-Murcia\n17-La Rioja\n\n");
+\n8-Cataluna\n9-Madrid\n10-Navarra\n11-Valencia\n12-Extremadura\n13-Galicia\n14-Pais Vasco\n15-Asturias\n16-Murcia\n17-La Rioja\n18-Volver\n\n");
 while(res!=18)
 {
   scanf("%i",&res);
@@ -511,9 +531,8 @@ habitacion1();
 }
 void mapa1(void )
 {
-    char a;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Te acercas al mapa en la pared*");
-    delay(3);
+    delay(2);
     printf("\n\n\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
                     *******************************************************\n\
@@ -535,12 +554,12 @@ void mapa1(void )
                                **   *******************\n\
                                      *******\n\
                                       ****\n");
-    delay(3);
-    printf("... Se puede ver claramente que es un mapa de Espanna ...\n");
-    delay(3);
-    printf("... Ovserbas atentamente el mapa en la pared ...\n");
-    delay(3);
-    printf("... Una luz detras del mapa se enciende ...\n");
+    delay(1);
+    printf("... Se puede ver claramente que es un mapa de Espa%ca ...\n" , 164);
+    delay(1.5);
+    printf("... Observas atentamente el mapa  ...\n");
+    delay(1.5);
+    printf("... Unas luces detras del mapa se encienden ...\n");
     delay(3);
     printf("\n\n\n\n\n\n                           ****        *        *         ****\n \
                        ****************************   *** **** **  **   *****\n \
@@ -631,22 +650,17 @@ printf("\n\n\n                           ****        *        *         ****\n \
                              *****************************\n\
                                **   *******************\n\
                                      *******\n\
-                                      ****\n\n");
-
+                                      ****\n\n\n\n");
 delay(3);
-            printf("... El Mapa se vuelve quieto ... \n\n");
-            delay(3);
+            printf("... El Mapa se queda quieto ... \n\n");
+            delay(1.5);
             printf("... Te alejas del cuadro ... \n\n");
-            delay(3);
-            printf("//Pulsa cualquier tecla para que la animacion progrese// \n\n");
-            scanf(" %c",&a);
+            delay(2);
             habitacion1();
-
 }
 void puerta(void )
 {
-    char r1,r2,a;
-    int c1=0,c2=0,c3=0,c4=0;
+    char r1[5], numeropalabra2[5];
     printf("\n\n\n\n\n\n                                           \n");
     printf("         _____________________________                   \n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
@@ -670,21 +684,63 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||            \n");
     printf("         |||||][][][][][][][][][][||||       \n");
     printf("         |||||][][][][][][][][][][||||   \n\n\n");
-    delay(3);
     printf("\n\n... Inspeccionas la puerta y ves que esta cerrada con un candado ...\n");
-    delay(3);
+    delay(2);
     printf("... Quieres inspeccionar el candado? ...\n");
-    delay(3);
-    while(((r1!='N')&&(r1!='S'))||((r2!='o')&&(r2!='i')))
-      scanf(" %c%c",&r1,&r2);
-
-    if((r1=='N')&&(r2=='o'))
+    while(((r1[0]!='N')&&(r1[0]!='S'))||((r1[1]!='O')&&(r1[1]!='I'))){
+      scanf(" %s",r1);
+      strupr(r1);
+    }
+    if((r1[0]=='N')&&(r1[1]=='O'))
     {
          habitacion1();
     }
-   if((r1=='S')&&(r2=='i'))
+   if((r1[0]=='S')&&(r1[1]=='I'))
     {
-        printf(" \n\n\n\n\n\n\n\n\n\n");
+        int c1a=0,c2=0,c3=0,c4=0,c1;
+        while((c1!=1492)&&(c1!=1800))
+        {
+                    printf(" \n\n\n\n\n\n\n\n\n\n");
+        printf("         _____________________________                   \n");
+        printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
+        printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||    \n");
+        printf("         |||||][][][][][][][][][][||||               \n");
+        printf("         |||||][][][][][][][][][][||||               _________  \n");
+        printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW||||           \n");
+        printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW|||| \n");
+        printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
+        printf("         |||||][][][][][][][][][][||||           ||||         ||||   \n");
+        printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
+        printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
+        printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
+        printf("         |||||][][][][][][][]@@@][||||        [][][][][][][][][][][]\n");
+        printf("         |||||][][][][][][][]@@@][||||        [][][][][] %i [][][][][       \n",c1a);
+        printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]      \n");
+        printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][       \n",c2);
+        printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]        \n");
+        printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][   \n",c3);
+        printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]    \n");
+        printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][    \n",c4);
+        printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
+        printf("         |||||][][][][][][][][][][||||   \n\n");
+        printf("\n\n... Puedes probar todas las combinaciones que quieras, si quieres dejar de inspeccionar el candado pulsa '1800' ...\n\n");
+        char numeropalabra[5]="0000";
+        scanf(" %s",numeropalabra);
+        c1a=numeropalabra[0]-48;
+        c2=numeropalabra[1]-48;
+        c3=numeropalabra[2]-48;
+        c4=numeropalabra[3]-48;
+        c1=1000*c1a+100*c2+10*c3+c4;
+        strcpy(numeropalabra2,numeropalabra);
+        }
+        if(c1==1492)
+        {
+          //  oscuridad();
+        int c1a=numeropalabra2[0]-48;
+        int c2=numeropalabra2[1]-48;
+        int c3=numeropalabra2[2]-48;
+        int c4=numeropalabra2[3]-48;
+            printf(" \n\n\n\n\n\n ");
     printf("         _____________________________                   \n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
     printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||    \n");
@@ -694,11 +750,11 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW|||| \n");
     printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
     printf("         |||||][][][][][][][][][][||||           ||||         ||||   \n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
+    printf("         |||||][][][][][][][][][][||||                        ||||\n");
+    printf("         |||||][][][][][][][][][][||||                        ||||\n");
+    printf("         |||||][][][][][][][][][][||||                        ||||\n");
     printf("         |||||][][][][][][][]@@@][||||        [][][][][][][][][][][]\n");
-    printf("         |||||][][][][][][][]@@@][||||        [][][][][] %i [][][][][       \n",c1);
+    printf("         |||||][][][][][][][]@@@][||||        [][][][][] %i [][][][][       \n",c1a);
     printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]      \n");
     printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][       \n",c2);
     printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]        \n");
@@ -708,113 +764,21 @@ void puerta(void )
     printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
     printf("         |||||][][][][][][][][][][||||   \n\n");
     delay(3);
-        printf("... Inspeccionas el candado y ves que tiene 9999 combinaciones diferentes ...\n");
-
-        while((c1!=1492)&&(c1!=1800))
-        {
-            delay(3);
-        printf("\n\n... Puedes probar todas las combinaciones que quieras, cuando acabes escribe '1800' ...\n\n");
-        scanf(" %i",&c1);
-        if(c1==1492)
-        {
-            printf(" \n\n\n\n\n\n");
-    printf("         _____________________________                   \n");
-    printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
-    printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||    \n");
-    printf("         |||||][][][][][][][][][][||||               \n");
-    printf("         |||||][][][][][][][][][][||||               _________  \n");
-    printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW||||           \n");
-    printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW|||| \n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||   \n");
-    printf("         |||||][][][][][][][][][][||||                        ||||\n");
-    printf("         |||||][][][][][][][][][][||||                        ||||\n");
-    printf("         |||||][][][][][][][][][][||||                        ||||\n");
-    printf("         |||||][][][][][][][]@@@][||||        [][][][][][][][][][][]\n");
-    printf("         |||||][][][][][][][]@@@][||||        [][][][][] %i [][][][][       \n",c1/1000);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]      \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][       \n",(c1%1000)/100);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]        \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][   \n",((c1%1000)%100)/10);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]    \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][    \n",((c1%1000)%100)%10);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
-    printf("         |||||][][][][][][][][][][||||   \n\n");
-    delay(3);
     oscuridad();
-    break;
         }
         else
             if(c1==1800)
             habitacion1();
-            else
-            {
-                printf(" \n\n\n\n\n\n\n\n\n\n");
-    printf("         _____________________________                   \n");
-    printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////   \n");
-    printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||    \n");
-    printf("         |||||][][][][][][][][][][||||               \n");
-    printf("         |||||][][][][][][][][][][||||               _________  \n");
-    printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW||||           \n");
-    printf("         |||||][][][][][][][][][][||||           ||||WWWWWWWWW|||| \n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||   \n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][][][][||||           ||||         ||||\n");
-    printf("         |||||][][][][][][][]@@@][||||        [][][][][][][][][][][]\n");
-    printf("         |||||][][][][][][][]@@@][||||        [][][][][] %i [][][][][       \n",c1/1000);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]      \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][       \n",(c1%1000)/100);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]        \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][   \n",((c1%1000)%100)/10);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]    \n");
-    printf("         |||||][][][][][][][][][][||||        [][][][][] %i [][][][][    \n",((c1%1000)%100)%10);
-    printf("         |||||][][][][][][][][][][||||        [][][][][][][][][][][]\n");
-    printf("         |||||][][][][][][][][][][||||   \n\n");
-            }
-
         }
-
-    }
-
-
 }
 
-void oscuridad(void )
-{
-    printf(" \n                                                         _______________________ \n");
-    printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
-    printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
-    printf("         ||\\\\\\\\\\\\\\\\\\\\\\\\/////////////||                   |||   ************  ||| \n");
-    printf("         |||||                    ||||                   |||  ************** ||| \n");
-    printf("         |||||                    ||||                   |||     **********  |||\n");
-    printf("         |||||                    ||||                   |||     *********   |||\n");
-    printf("         |||||                    ||||                   |||     **********  |||\n");
-    printf("         |||||                    ||||                   |||       *****     |||\n");
-    printf("         |||||                    ||||                   ||/////////\\\\\\\\\\\\\\\\\\\\||\n");
-    printf("         |||||                    |||| \n");
-    printf("         |||||                    |||| \n");
-    printf("         |||||                    |||| \n");
-    printf("         |||||                    |||| \n");
-    printf("         |||||                    ||||                \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("         |||||                    ||||                \\\\|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|[]|//\n");
-    printf("_________|||||____________________||||________________\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////______ \n\n");
 
-}
 void casa(void )
  {
 
   char r1[50];
-     char ans1[]="Entro";
-     char ans2[]="Voy";
-     int hint=0;
+     char ans1[]="ENTRO";
+     char ans2[]="HUYO";
          printf("                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
     printf("         \\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////                   |||                 ||| \n");
@@ -838,44 +802,28 @@ void casa(void )
     printf("         |||||][][][][][][][][][][|||| \n");
     printf("         |||||][][][][][][][][][][|||| \n");
     printf("_________|||||][][][][][][][][][][||||_____________________________________________________________________ \n\n\n");
-
-    printf("Que haces?\n\n");
+    printf("Que haces?                                                                                  opciones: entro, huyo\n\n");
     while ((strcmp(ans1, r1) != 0)&&(strcmp(ans2, r1)))
     {
         scanf("%s",r1);
-        hint++;
-        if(hint==3)
-        {
-          printf("//Entro//\n\n");
-        }
-
+        strupr(r1);
     }
  }
 void oscuridad1(void )
  {
-     char r1[50];
-     char ans1[]="Entro";
-     char ans2[]="Voy";
-
-     int hint=0;
-     delay(3);
+     delay(1);
      printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+     delay(2);
+     printf("... Oscuridad ...\n\n");
+     delay(2);
+     printf("... Se escucha el sonido del cerrojo cerrandose detras de ti ...\n\n");
+     delay(2);
+     printf("... enciendes la luz y ves que el suelo esta helado ...\n\n");
      delay(3);
-     printf("... Oscuridad ...\n");
-     delay(3);
-     printf("... Se escucha el sonido del cerrojo cerrandose detras de ti ...\n");
-     delay(3);
-     printf("... Que haces? ...\n");
-     delay(3);
-
-
+    printfdelay("... al pisar ves que el suelo resbala tanto que para frenarte tienes que chocar con un obstaculo o una pared ...\n\n" , 3);
+    printfdelay("para moverte usa las teclas 'W','A','S','D' \n\n" , 3);
+    printfdelay("tu objetivo es llegar hasta la salida, en la parte superior derecha, para pasar a la siguiente sala\n\n" , 3);
+    printf("pulsa cualquier tecla para empezar");
+    getch();
     }
 
-/*
-void delay( float seconds)
-{
-    int milli_seconds = 1000 * seconds;
-    clock_t start_time = clock();
-    while (clock() < start_time + milli_seconds);
-}
-*/
