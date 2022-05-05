@@ -10,18 +10,9 @@ casa();
 oscuridad1();
 delay(1);
 printf("\n\n\n\n");
-//graficamos el mapa en la posicion inicial(1 , 0) y con la funcion posicion calcularemos en que posicion se encuentra en cada instante el usuario y la graficaremos
 mapa(1 , 0);
 posicion(1 , 0);
 // ---------------------------------------------------cambio de fase(a fase2)------------------------------------------
-//estas dos funciones funcionan igual que las utilizadas para la sala 1 pero a la funcion mapa la llamamos laberinto
-//los cuatro 0 del final indican que ninguna de las monedas esta cogida , si cambiamos un 0 por un uno no tendriamos que recoger esa moneda
-printfdelay("la siguiente sala es un laberinto en el que hay que recoger 4 monedas\n\n" , 3);
-printfdelay("una vez las tengas todas podras pasar por la puerta que se encuentra a la izquierda de la casilla en la que apareces\n\n" , 3);
-printf("pulsa cualquier tecla para empezar");
-getch();
-delay(1);
-laberinto(1,39,0,0,0,0);
 posicion2(1,39);
 delay(1);
 habitacion();

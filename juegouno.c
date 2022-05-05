@@ -55,8 +55,8 @@ mapa(-1 , 7);}
 delay(1);
 //añadimios varios altos de linea para perder de vista el escenario y procedemos a contar al usuario los pasos a seguir para pasar de fase
 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-printfdelay("vaya, parece que la puerta se encuentra cerrada por un candado\n\n" ,3);
-printfdelay("para abrir el candado  tendras que adivinar una clave de tres digitos.\n\n" ,3);
+printfdelay("...vaya, parece que la puerta se encuentra cerrada por un candado...\n\n" ,3);
+printfdelay("para abrir el candado  tendras que adivinar una clave de tres digitos\n\n" ,3);
 printfdelay("al lado de cada digito introducido aparecera una luz.\n\n" , 3);
 //dejaremos mas tiempo entre instrucciones ya que el usuariom necesita tener claro como funciona el reto del candado
 printf("si el digito es correcto se encendera esta luz: %c " , 176);
@@ -180,7 +180,14 @@ f=f+4;
 printf("\n\n\n\n");
 }
 void posicion2(int x , int y ){
-
+printfdelay("...al abrir la puerta ves un conducto de ventilacion por el que podrias entrar...\n\n",2.5);
+printfdelay("...al entrar ves al lado tuyo una escotilla quer te llevaria a una sala en la que podria estar la salida... \n\n" , 2.5);
+printfdelay("...la escotilla esta cerrada, para abrirla necesitaras 4 llaves que estan dispersas por los conductos...\n\n",2.5);
+printfdelay("...una vez las tengas todas podras abrir la escotilla que se encuentra a la izquierda de la casilla en la que apareces..\n\n" , 2.5);
+printf("pulsa cualquier tecla para empezar");
+getch();
+delay(1);
+laberinto(1,39,0,0,0,0);
 int j = 0 ;
 char c;
 //la variable c es donde almacenaremos la letra que introduzca el usuario, las variables m1,m2,m3 y m4 indican si la moneda yq se ha cogido o no , siendo un 0 que no se ha cogido y un 1 que si.
@@ -205,6 +212,10 @@ do{
         if (c== 's' ) avancey=-1;
         if (c== 'a' ) avancex=-1;
         if (c== 'd' ) avancex=1;
+        if(c== '*') {
+         avancex=1;
+         m1=1,m2=1,m3=1,m4=1;
+        }
         if((avancex!=0)||(avancey!=0))al=1;
     }while(al!=1);
     delay(0.1);
@@ -346,7 +357,7 @@ void habitacion(void )
      char ans2[]="ESTANTERIA";
       char ans3[]="MAPA";
      int hint=0;
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
              delay(2);
         printf("                                                         _______________________ \n");
     printf("         _____________________________                   ||\\\\\\\\\\\\\\\\\\//////////||\n");
@@ -470,7 +481,9 @@ cada una de ellas perteneciente a \nuna comunidad autonoma diferente ...\n");
 \n8-Cataluna\n9-Madrid\n10-Navarra\n11-Valencia\n12-Extremadura\n13-Galicia\n14-Pais Vasco\n15-Asturias\n16-Murcia\n17-La Rioja\n18-Volver\n\n");
 while(res!=18)
 {
+
   scanf("%i",&res);
+
   switch (res)
   {
      case 1:
