@@ -16,11 +16,6 @@ void printfdelay(char[] , float);
 void casa(void );
 void oscuridad1(void );
 void habitacion(void );
-void habitacion1(void );
-void estanteria(void );
-void mapa1(void );
-void puerta(void );
-void oscuridad(void );
 
 // void delay( float );
 
