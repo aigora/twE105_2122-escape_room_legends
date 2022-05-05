@@ -1,6 +1,11 @@
 #include "juegouno.h"
 #include "adddelay.h"
 
+typedef struct{
+    char nombre[20];
+    int devuelve;
+}provincia;
+
 void posicion(int x , int y ){
     mapa(1 , 0);
     //creo una variable que servira para poner fin al juego
@@ -360,59 +365,8 @@ void habitacion(void )
         \n8-Cataluna\n9-Madrid\n10-Navarra\n11-Valencia\n12-Extremadura\n13-Galicia\n14-Pais Vasco\n15-Asturias\n16-Murcia\n17-La Rioja\n18-Volver\n\n");
         do{
             scanf("%i",&res);
-            switch (res){
-                case 1:
-                printf("\n ... Abres el libro de Andalucia, y ves que en la primera pagina esta escrito en grande el numero '1' ... \n");
-                break;
-                case 2:
-                printf("\n... Abres el libro de Aragon, y ves que en la primera pagina esta escrito en grande el numero '8' ...\n");
-                break;
-                case 3:
-                printf("\n... Abres el libro de Islas Baleares, y ves que en la primera pagina esta escrito en grande el numero '5' ...\n");
-                break;
-                case 4:
-                printf("\n... Abres el libro de Canarias, y ves que en la primera pagina esta escrito en grande el numero '2' ...\n");
-                break;
-                case 5:
-                printf("\n... Abres el libro de Cantabria, y ves que en la primera pagina esta escrito en grande el numero '9' ...\n");
-                break;
-                case 6:
-                printf("\n... Abres el libro de Castilla La Mancha, y ves que en la primera pagina esta escrito en grande el numero '4' ...\n");
-                break;
-                case 7:
-                printf("\n... Abres el libro de Castilla y Leon, y ves que en la primera pagina esta escrito en grande el numero '1' ...\n");
-                break;
-                case 8:
-                printf("\n... Abres el libro de Cataluna, y ves que en la primera pagina esta escrito en grande el numero '4' ... \n");
-                break;
-                case 9:
-                printf("\n... Abres el libro de Madrid, y ves que en la primera pagina esta escrito en grande el numero '9' ... \n");
-                break;
-                case 10:
-                printf("\n... Abres el libro de Navarra, y ves que en la primera pagina esta escrito en grande el numero '6' ...\n");
-                break;
-                case 11:
-                printf("\n... Abres el libro de Valencia, y ves que en la primera pagina esta escrito en grande el numero '2' ... \n");
-                break;
-                case 12:
-                printf("\n... Abres el libro de Extremadura, y ves que en la primera pagina esta escrito en grande el numero '3' ...\n");
-                break;
-                case 13:
-                printf("\n... Abres el libro de Galicia, y ves que en la primera pagina esta escrito en grande el numero '3' ...\n");
-                break;
-                case 14:
-                printf("\n... Abres el libro de Pais Vasco, y ves que en la primera pagina esta escrito en grande el numero '9' ...\n");
-                break;
-                case 15:
-                printf("\n... Abres el libro de Asturias, y ves que en la primera pagina esta escrito en grande el numero '8' ...\n");
-                break;
-                case 16:
-                printf("\n... Abres el libro de Murcia, y ves que en la primera pagina esta escrito en grande el numero '6' ...\n");
-                break;
-                case 17:
-                printf("\n... Abres el libro de La Rioja, y ves que en la primera pagina esta escrito en grande el numero '5' ...\n");
-                break;
-            }
+            provincia estanteria[17]={{"Andalucia",1},{"Aragon",8},{"Islas Baleares",5},{"canarias",2},{"cantabria",9},{"Castilla La Mancha",4},{"Castilla y Leon",1},{"cataluna",4},{"madrid",9},{"navarra",6},{"valencia",2},{"extremadura",3},{"galicia",3},{"pais vasco",9},{"asturias",8},{"murcia",6},{"la rioja",5}};
+            if((res>0)&&(res<19)) printf("\n ... Abres el libro de %s, y ves que en la primera pagina esta escrito en grande el numero '%i' ... \n",estanteria[res-1].nombre,estanteria[res-1].devuelve);
         }while (res!=18);
         goto habitaciongo;
     }
@@ -631,4 +585,5 @@ void oscuridad1(void )
     delay(1);
     printf("\n\n\n\n");
     }
+
 
