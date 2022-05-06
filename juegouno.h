@@ -17,6 +17,7 @@ void tiempo2(void);
 void casa(void );
 void oscuridad1(void );
 void habitacion(void );
+void ficheros(int ,int);
 
 // void delay( float );
 

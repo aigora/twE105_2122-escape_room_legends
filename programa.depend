@@ -24,18 +24,18 @@
 	<stdlib.h>
 	<time.h>
 
-1651778711 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.c
+1651860599 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.c
 	"juegouno.h"
 	"adddelay.h"
 
-1651770092 c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.h
+1651856415 c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.h
 	<stdio.h>
 	<string.h>
 	<conio.h>
 	<stdlib.h>
 	<time.h>
 
-1651778728 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\main.c
+1651859722 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\main.c
 	"juegouno.h"
 	"adddelay.h"
 
