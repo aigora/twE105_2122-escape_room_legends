@@ -334,6 +334,7 @@ void habitacion(void )
     int i;
     char foto2[1000000];
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
+    delay(2.5);
     FILE *pf;
     habitaciongo:
     printf("\n\n\n\n");
@@ -407,8 +408,30 @@ void habitacion(void )
             for(i=0;i<1000000;i++)
             {
                 fscanf(pf, "%c",&foto1[i]);
+                if(foto1[i]=='%')
+                {
+                    printf("%i",c1a);
+                }
+                else
+                if(foto1[i]=='#')
+                {
+                   printf("%i",c2);
+                }
+                else
+                if(foto1[i]=='+')
+                {
+                   printf("%i",c3);
+                }
+                else
+                if(foto1[i]=='&')
+                {
+                    printf("%i",c4);
+
+                }
+                else
                 if(foto1[i]=='?')
                 break;
+                else
                 printf("%c",foto1[i]);
             }
             fclose(pf);
@@ -436,8 +459,30 @@ void habitacion(void )
                 for(i=0;i<1000000;i++)
                     {
                     fscanf(pf, "%c",&foto1[i]);
+                    if(foto1[i]=='%')
+                {
+                    printf("%i",c1a);
+                }
+                else
+                if(foto1[i]=='#')
+                {
+                   printf("%i",c2);
+                }
+                else
+                if(foto1[i]=='+')
+                {
+                   printf("%i",c3);
+                }
+                else
+                if(foto1[i]=='&')
+                {
+                    printf("%i",c4);
+
+                }
+                else
                     if(foto1[i]=='?')
                     break;
+                else
                     printf("%c",foto1[i]);
                     }
                 fclose(pf);
@@ -585,5 +630,25 @@ void oscuridad1(void )
     delay(1);
     printf("\n\n\n\n");
     }
-
+void tiempo1(void)
+{
+    FILE *pez1;
+    time_t now = time(NULL);
+    pez1= fopen("Proyecto/Hora.txt","w");
+    fprintf(pez1,"%i,",now);
+    fclose(pez1);
+}
+void tiempo2(void)
+{
+    FILE *pez1;
+    time_t now = time(NULL);
+    pez1= fopen("Proyecto/Hora.txt","a");
+    fprintf(pez1,"%i,",now);
+    fclose(pez1);
+    int n1=0,n2=0,subs=0;
+    pez1= fopen("Proyecto/Hora.txt","r");
+    fscanf(pez1,"%i,%i",&n1,&n2);
+    printf("%i",n2-n1);
+    fclose(pez1);
+}
 
