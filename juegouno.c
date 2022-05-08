@@ -389,6 +389,7 @@ void printfdelay(char frase[], float seconds)
 //////////////////////////
 void habitacion(void )
 {
+    FILE *pf;
     int respuesta1;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
     delay(2.5);
@@ -396,26 +397,24 @@ void habitacion(void )
     do
     {
         printf("\n\n\n\n");
-        ficheros(0,c1);
-        printf("... Delante tuya hay una puerta, una estanteria y un mapa en la pared ...\n\n");
-        printf("Que deseas inspeccionar?                                                            1:puerta 2:estanteria 3:mapa \n\n");
+        pf = fopen("Proyecto/Imagen Estaneria Mapa Puerta Cerrada.txt", "r");
+        imprime(pf);
         do
         {
             scanf("%i",&respuesta1);
-        }while ((respuesta1!=1)&&(respuesta1!=2)&&(respuesta1!=3));
-
+        }
+        while ((respuesta1!=1)&&(respuesta1!=2)&&(respuesta1!=3));
         if(respuesta1==2)
         {
-            int res=0;
-            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n... Inspeccionas la estanteria y ves que la estanteria esta compuesta por 17 libros,\
-        cada una de ellas perteneciente a \nuna comunidad autonoma diferente ...\n");
-            printf("\n\n //Puedes sacar cada libro de la estanteria e inspeccionarlo. Si quieres volver pulsa '18'//\n");
-            printf("1-Andalucia\n2-Aragon\n3-Islas Baleares\n4-Canarias\n5-Cantabria\n6-Castilla La Mancha\n7-Castilla y Leon\
-        \n8-Cataluna\n9-Madrid\n10-Navarra\n11-Valencia\n12-Extremadura\n13-Galicia\n14-Pais Vasco\n15-Asturias\n16-Murcia\n17-La Rioja\n18-Volver\n\n");
+        int res=0;
+        pf = fopen("Proyecto/Estanteria.txt", "r");
+        imprime(pf);
+        provincia estanteria[17];
+        pf = fopen("Proyecto/Matriz_Provincias.txt" , "r");
+        for(int i=0;i<17;i++)fscanf(pf, " %[^;];%i\n",estanteria[i].nombre,&estanteria[i].devuelve);
             do
             {
                 scanf("%i",&res);
-                provincia estanteria[17]= {{"Andalucia",1},{"Aragon",8},{"Islas Baleares",5},{"canarias",2},{"cantabria",9},{"Castilla La Mancha",4},{"Castilla y Leon",1},{"cataluna",4},{"madrid",9},{"navarra",6},{"valencia",2},{"extremadura",3},{"galicia",3},{"pais vasco",9},{"asturias",8},{"murcia",6},{"la rioja",5}};
                 if((res>0)&&(res<19)) printf("\n ... Abres el libro de %s, y ves que en la primera pagina esta escrito en grande el numero '%i' ... \n",estanteria[res-1].nombre,estanteria[res-1].devuelve);
             }
             while (res!=18);
@@ -423,88 +422,56 @@ void habitacion(void )
         if(respuesta1==1)
         {
             int respuesta2;
-            printf("\n\n\n\n\n\n\n");
-            ficheros(1,c1);
-            printf("\n\n\n\n... Inspeccionas la puerta y ves que esta cerrada con un candado ...\n");
-            delay(2);
-            printf("... Quieres inspeccionar el candado? ...                                 1:si   2:no\n");
-           do{
-            scanf("%i" , &respuesta2);
-            }while((respuesta2!=1)&&(respuesta2!=2));
-            if(respuesta2==1){
-                int c1a=0,c2=0,c3=0,c4=0;
+            pf = fopen("Proyecto/Puerta.txt", "r");
+            imprime(pf);
+            do
+            {
+                scanf("%i", &respuesta2);
+            }
+            while((respuesta2!=1)&&(respuesta2!=2));
+            if(respuesta2==1)
+            {
                 do
                 {
-                    printf(" \n\n\n\n\n\n\n\n\n\n");
-                    ficheros(2,c1);
-                    printf("\n\n");
-                    printf("\n\n... Puedes probar todas las combinaciones que quieras, si quieres dejar de inspeccionar el candado pulsa '1800' ...\n\n");
+                    pf = fopen("Proyecto/Puerta Candado Cerrado.txt", "r");
+                    imprime(pf);
                     char numeropalabra[5]="0000";
                     scanf(" %s",numeropalabra);
-                    c1a=numeropalabra[0]-48;
-                    c2=numeropalabra[1]-48;
-                    c3=numeropalabra[2]-48;
-                    c4=numeropalabra[3]-48;
-                    c1=1000*c1a+100*c2+10*c3+c4;
+                    c1=1000*(numeropalabra[0]-48)+100*(numeropalabra[1]-48)+10*(numeropalabra[2]-48)+(numeropalabra[3]-48);
                 }
                 while((c1!=1492)&&(c1!=1800));
                 if(c1==1492)
                 {
-                    ficheros(3,c1);
-                    printf("\n\n");
-                    delay(3);
-                    ficheros(4,c1);
+                    pf = fopen("Proyecto/Puerta Candado Abierto.txt", "r");
+                    imprime(pf);
                 }
             }
         }
         if(respuesta1 == 3)
         {
-            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n... Te acercas al mapa en la pared ...\n");
+            pf = fopen("Proyecto/Mapa Espana.txt", "r");
+            imprime(pf);
             delay(1);
-            ficheros(5,c1);
-            delay(1);
-            printf("\n... Se puede ver claramente que es un mapa de Espa%ca ...\n", 164);
-            delay(1.5);
-            printf("... Observas atentamente el mapa  ...\n");
-            delay(1.5);
-            printf("... Unas luces detras del mapa se encienden ...\n");
-            for(int j=6;j<10;j++){
-                delay(3);
-                ficheros(j,c1);
-                printf("\n\n\n\n");
-            }
-            delay(3);
-            printf("... El Mapa se queda quieto ... \n\n");
-            delay(1.5);
-            printf("... Te alejas del cuadro ... \n\n");
-            delay(2);
         }
     }
     while(c1!=1492);
+    fclose(pf);
 }
 
 void casa(void )
 {
+    FILE *pf;
+    pf = fopen("Proyecto/Puerta Entrada.txt", "r");
     int respuesta;
-    ficheros(10,0);
-    printf("Que haces?                                                                                  1:entro  2:huyo\n\n");
-    while ((respuesta!=1)&&(respuesta!=2)) scanf("%i" , &respuesta);
+    imprime(pf);
+    while ((respuesta!=1)&&(respuesta!=2)) scanf("%i", &respuesta);
+    fclose(pf);
 }
 void oscuridad1(void )
 {
-    delay(1);
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    delay(2);
-    printf("... Oscuridad ...\n\n");
-    delay(2);
-    printf("... Se escucha el sonido del cerrojo cerrandose detras de ti ...\n\n");
-    delay(2);
-    printf("... enciendes la luz y ves que el suelo esta helado ...\n\n");
-    delay(3);
-    printfdelay("... al pisar ves que el suelo resbala tanto que para frenarte tienes que chocar con un obstaculo o una pared ...\n\n", 3);
-    printfdelay("para moverte usa las teclas 'W','A','S','D' \n\n", 3);
-    printfdelay("tu objetivo es llegar hasta la salida, en la parte superior derecha, para pasar a la siguiente sala\n\n", 3);
-    printf("pulsa cualquier tecla para empezar");
+    FILE *pf;
+    pf=fopen("Proyecto/Oscuridad.txt" , "r");
+    imprime(pf);
     getch();
     delay(1);
     printf("\n\n\n\n");
@@ -530,31 +497,13 @@ void tiempo2(void)
     printf("%i",n2-n1);
     fclose(pez1);
 }
-void ficheros( int n, int c1)
+void imprime(FILE *pf)
 {
-    char foto[71000];
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    FILE *pf;
-    if(n==0) pf = fopen("c:Proyecto/Imagen Estaneria Mapa Puerta Cerrada.txt", "r");
-    if(n==1) pf = fopen("c:Proyecto/Puerta.txt", "r");
-    if(n==2) pf = fopen("c:Proyecto/Puerta Candado Cerrado.txt", "r");
-    if(n==3) pf = fopen("c:Proyecto/Puerta Candado Abierto.txt", "r");
-    if(n==4) pf = fopen("c:Proyecto/Imagen Estaneria Mapa Puerta Abierta.txt", "r");
-    if(n==5) pf = fopen("c:Proyecto/Mapa Espana.txt", "r");
-    if(n==6) pf = fopen("c:Proyecto/Mapa Espana Andalucia.txt", "r");
-    if(n==7) pf = fopen("c:Proyecto/Mapa Espana Cataluna.txt", "r");
-    if(n==8) pf = fopen("c:Proyecto/Mapa Espana Madrid.txt", "r");
-    if(n==9) pf = fopen("c:Proyecto/Mapa Espana Valencia.txt", "r");
-    if(n==10) pf = fopen("c:Proyecto/Puerta Entrada.txt", "r");
-        int i=1;
-        while(foto[i]!='?'){
-        i++;
-        fscanf(pf, "%c",&foto[i]);
-        if(foto[i-1]=='%')      printf("%i", (c1/1000));
-        else if(foto[i-1]=='#') printf("%i", (c1/100)-((c1/1000)*10));
-        else if(foto[i-1]=='+') printf("%i", ((c1%100)-(c1%10))/10);
-        else if(foto[i-1]=='&') printf("%i", (c1%10));
-        else             printf("%c",foto[i-1]);
+    char foto;
+    while(fscanf(pf, "%c",&foto) !=EOF )
+    {
+        if(foto=='º') delay(1);
+        else printf("%c",foto);
     }
-    fclose(pf);
 }

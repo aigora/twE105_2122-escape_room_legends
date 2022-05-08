@@ -1,0 +1,35 @@
+บ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+บบ
+... Oscuridad ...
+
+บบ
+... Se escucha el sonido del cerrojo cerrandose detras de ti ...
+
+บบ
+... enciendes la luz y ves que el suelo esta helado ...
+
+บบบ
+... al pisar ves que el suelo resbala tanto que para frenarte tienes que chocar con un obstaculo o una pared ...
+
+บบบ
+para moverte usa las teclas 'W','A','S','D'
+
+บบบ
+tu objetivo es llegar hasta la salida, en la parte superior derecha, para pasar a la siguiente sala
+
+บบบ
+pulsa cualquier tecla para empezar

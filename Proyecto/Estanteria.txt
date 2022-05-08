@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... Inspeccionas la estanteria y ves que la estanteria esta compuesta por 17 libros
+cada una de ellas perteneciente a \nuna comunidad autonoma diferente ...
+
+//Puedes sacar cada libro de la estanteria e inspeccionarlo. Si quieres volver pulsa '18'//
+1-Andalucia
+2-Aragon
+3-Islas Baleares
+4-Canarias
+5-Cantabria
+6-Castilla La Mancha
+7-Castilla y Leon
+8-Cataluna
+9-Madrid
+10-Navarra
+11-Valencia
+12-Extremadura
+13-Galicia
+14-Pais Vasco
+15-Asturias
+16-Murcia
+17-La Rioja
+18-Volver
+

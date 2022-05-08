@@ -17,8 +17,6 @@ void tiempo2(void);
 void casa(void );
 void oscuridad1(void );
 void habitacion(void );
-void ficheros(int ,int);
-
-// void delay( float );
+void imprime(FILE *pf);
 
 #endif // JUEGOUNO_H_INCLUDED

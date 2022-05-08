@@ -1,0 +1,17 @@
+Andalucia;1
+Aragon;8
+Islas Baleares;5
+canarias;2
+cantabria;9
+Castilla La Mancha;4
+Castilla y Leon;1
+cataluna;4
+madrid;9
+navarra;6
+valencia;2
+extremadura;3
+galicia;3
+pais vasco;4
+asturias;8
+murcia;6
+la rioja;5
