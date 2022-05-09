@@ -14,7 +14,7 @@ laberinto();
 casa();
 oscuridad1();
 ice_cave();
-laberinto();
+candado();
 habitacion();
 return 0 ;
 }

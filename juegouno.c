@@ -88,7 +88,7 @@ void ice_cave()
     imprime(pf,0);
     delay(1.5);
     fclose(pf);
-    candado();
+    //candado();
 }
 
 void candado(){
@@ -127,11 +127,13 @@ delay(1);
 pf=fopen("proyecto/candado_abierto.txt" , "r");
 imprime(pf,0);
 fclose(pf);
-delay(2);
+//delay(2);
+laberinto();
 }
 void laberinto()
 {
     FILE *pf;
+    int a=1;
     //imprimimos las instrucciones de la prueba
     pf=fopen("proyecto/texto_laberinto.txt", "r");
     char imagen[41][42];
@@ -143,19 +145,23 @@ void laberinto()
     }
     char c;
     //coordenadas iniciales del jugador
-    int x=1,y=1;
+    int x=2,y=1;
     do
     {
         //escaneamos la tecla que pulsa el jugador y dependidendo de que tecla sea aumentaremos o reduciremos sus coordenadas en el eje x o y
         int avancex=0,avancey=0;
         do
         {
+            //si es la primera vez que realizamos este bucle(eso lo sabemos porque a=0) no le pediremos al usuario que introduzca tecla e imprimiremos directamente el mapa
+            if(a==1) avancex=-1;
+            else{
             c=getch();
             if(c=='w')  avancex=-1;
             if(c=='s')  avancex=1;
             if(c=='a')  avancey=-1;
             if(c=='d')  avancey=1;
             if(c=='*')  x=39,y=39;
+        }a++;
         }
         while(avancex==0&&avancey==0);
         x=x+avancex;
