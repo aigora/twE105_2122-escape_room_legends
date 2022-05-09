@@ -10,7 +10,6 @@
 //void mapa(int , int);
 void candado(void);
 void laberinto(void);
-void printfdelay(char[] , float);
 void tiempo1(void);
 void tiempo2(void);
 void casa(void );

@@ -86,7 +86,7 @@ void ice_cave()
     //imprimimos las instrucciones de la siguiente prueba y damos comienzo a la misma
     pf=fopen("Proyecto/texto_ice_cave.txt","r");
     imprime(pf,0);
-    delay(1.5);
+   // delay(1.5);
     fclose(pf);
     //candado();
 }
@@ -136,6 +136,7 @@ void laberinto()
     int a=1;
     //imprimimos las instrucciones de la prueba
     pf=fopen("proyecto/texto_laberinto.txt", "r");
+    imprime(pf,0);
     char imagen[41][42];
     //abrimos el fichjero en el que se encuentra dibujado con caracteres el mapa y almacenamos el mapa en una matriz de caracteres
     pf=fopen("proyecto/laberinto.txt", "r");
@@ -203,14 +204,6 @@ void laberinto()
     delay(1);
 }
 
-//como en main.c hago mucho uso de la funcion printf y despues de la funcion delay, creo esta funcio para ahorrar codigo y que no se vea sobrecargado el documento main.c
-void printfdelay(char frase[], float seconds)
-{
-    printf("%s",frase);
-    int milli_seconds = 1000 * seconds;
-    clock_t start_time = clock();
-    while (clock() < start_time + milli_seconds);
-}
 //////////////////////////
 void habitacion(void )
 {
