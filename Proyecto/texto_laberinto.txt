@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...al abrir la puerta ves un conducto de ventilacion por el que podrias entrar...
+บบ
+...al entrar ves al lado tuyo una escotilla quer te llevaria a una sala en la que podria estar la salida...
+บบ
+...la escotilla esta cerrada, para abrirla necesitaras 4 llaves que estan dispersas por los conductos...
+บบ
+...una vez las tengas todas podras abrir la escotilla que se encuentra a la izquierda de la casilla en la que apareces..
+บบ
+pulsa cualquier tecla para empezar

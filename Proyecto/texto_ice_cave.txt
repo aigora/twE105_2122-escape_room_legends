@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+...vaya, parece que la puerta se encuentra cerrada por un candado...
+บบ
+para abrir el candado  tendras que adivinar una clave de tres digitos
+บบ
+debajo del candado apareceran 3 testigos.
+บบ
+el primer testigo corresponde al primer digito introduciod, el 2บ al 2บ y el 3บ al 3บ
+บบบ
+si el digito es correcto su correspondiente testigo mostrara'**'
+บบบ
+si el digito esta en la contrasena pero no en el lugar introducido se mostrara '//'
+บบบ
+si de lo contrario, el digito no esta en la contrase๑a el testigo mostrara '~~'

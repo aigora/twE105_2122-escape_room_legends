@@ -6,17 +6,17 @@
 #include<stdlib.h>
 #include<time.h>
 //#include<conio.h>
-void posicion(int , int );
-void mapa(int , int);
-void candado(int);
-void laberinto(int,int,int,int,int,int);
-void posicion2(int,int);
+//void posicion(int , int );
+//void mapa(int , int);
+void candado(void);
+void laberinto(void);
 void printfdelay(char[] , float);
 void tiempo1(void);
 void tiempo2(void);
 void casa(void );
 void oscuridad1(void );
 void habitacion(void );
-void imprime(FILE *pf);
+void imprime(FILE *pf,int);
+void ice_cave(void);
 
 #endif // JUEGOUNO_H_INCLUDED
