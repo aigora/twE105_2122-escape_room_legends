@@ -51,15 +51,15 @@ void ice_cave()
                     {
                         for(int j=0; j<11; j++)
                         {
-                 /*en la matriz de caracteres las paredes vienen representadas con la letra'M'
-                 con este if lo que hacemos es no graficar el mapa si el personaje esta en las coordenadas de un obstaculo
-                 ya que es ilogico que este en una pared, por ello luego retrocedera una casilla*/
+                            /*en la matriz de caracteres las paredes vienen representadas con la letra'M'
+                            con este if lo que hacemos es no graficar el mapa si el personaje esta en las coordenadas de un obstaculo
+                            ya que es ilogico que este en una pared, por ello luego retrocedera una casilla*/
 
                             if(imagen[x][y]!='M')
                             {
-                            /*como el mapa en el fichero esta por asi decirlo encriptado lo desencriptamos con este if else
-                            si las coordenadas a dibujar coinciden con las del jugador no imprimimos nada , si estas coinciden
-                            con una M imprimimos una pared y si estas coinciden con un . imprimimos el fondo*/
+                                /*como el mapa en el fichero esta por asi decirlo encriptado lo desencriptamos con este if else
+                                si las coordenadas a dibujar coinciden con las del jugador no imprimimos nada , si estas coinciden
+                                con una M imprimimos una pared y si estas coinciden con un . imprimimos el fondo*/
                                 if(x==i&&y==j) printf("    ");
                                 else
                                 {
@@ -83,52 +83,52 @@ void ice_cave()
         y=y-avancey;
     }
     while(x!=2||y!=9);
+}
+
+void candado()
+{
+//creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
+    char respuesta[3];
+    char cent='~',dec='~',un='~';
+    FILE *pf;
     //imprimimos las instrucciones de la siguiente prueba y damos comienzo a la misma
     pf=fopen("Proyecto/texto_ice_cave.txt","r");
     imprime(pf,0);
-   // delay(1.5);
-    fclose(pf);
-    //candado();
-}
-
-void candado(){
-//creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
-char respuesta[3];
-char cent='~',dec='~',un='~';
-FILE *pf;
-pf=fopen("proyecto/candado.txt" , "r");
+    pf=fopen("proyecto/candado.txt", "r");
 //graficamos una primera vez el candado y le pedimos al usuario que introduzca una clave
-imprime(pf,0);
+    imprime(pf,0);
     printf("                [][][][][][][][][][][]\n                [][][][][][][][][][][]\n\n\n\n\n\n\n ...introduce una contraseñna de 3 digitos...");
-fclose(pf);
-do{
-scanf("%s" , respuesta);
-//para que la funcion no se rompa si el usuario introduce un caracter en vez de un numero por accidente,almacenamos inicialmente la respuesta en una cadena de carcteres que mas tarde convertimos a un entero
-int solucion=((respuesta[0]-48)*1000+(respuesta[1]-48)*100+(respuesta[2]-48)*10);
-FILE *pf;
-pf=fopen("proyecto/candado.txt" , "r");
-//graficamos el candado con los caracteres que ha introducido el usuario
-imprime(pf,solucion);
-cent='~',dec='~',un='~';
-//revisamos la clave introducida por el usuario y en base a la clave q2ue sea los testigos toman unos valores u otros
-    if ((respuesta[0]-48)==2) cent='*';
-    else if(((respuesta[0]-48)==5)||((respuesta[0]-48)==1))cent='/';
-    if ((respuesta[1]-48)==1) dec='*';
-    else if(((respuesta[1]-48)==5)||((respuesta[1]-48)==2))dec='/';
-    if ((respuesta[2]-48)==5) un='*';
-    else if(((respuesta[2]-48)==1)||((respuesta[2]-48)==2))un='/';
-
-    printf("                [][]%c%c[][]%c%c[][]%c%c[][]\n                [][][][][][][][][][][]\n\n" ,cent,cent,dec,dec,un,un);
-    printf("\n\n\n\n\n");
     fclose(pf);
+    do
+    {
+        scanf("%s", respuesta);
+//para que la funcion no se rompa si el usuario introduce un caracter en vez de un numero por accidente,almacenamos inicialmente la respuesta en una cadena de carcteres que mas tarde convertimos a un entero
+        int solucion=((respuesta[0]-48)*1000+(respuesta[1]-48)*100+(respuesta[2]-48)*10);
+        FILE *pf;
+        pf=fopen("proyecto/candado.txt", "r");
+//graficamos el candado con los caracteres que ha introducido el usuario
+        imprime(pf,solucion);
+        cent='~',dec='~',un='~';
+//revisamos la clave introducida por el usuario y en base a la clave q2ue sea los testigos toman unos valores u otros
+        if ((respuesta[0]-48)==2) cent='*';
+        else if(((respuesta[0]-48)==5)||((respuesta[0]-48)==1))cent='/';
+        if ((respuesta[1]-48)==1) dec='*';
+        else if(((respuesta[1]-48)==5)||((respuesta[1]-48)==2))dec='/';
+        if ((respuesta[2]-48)==5) un='*';
+        else if(((respuesta[2]-48)==1)||((respuesta[2]-48)==2))un='/';
+
+        printf("                [][]%c%c[][]%c%c[][]%c%c[][]\n                [][][][][][][][][][][]\n\n",cent,cent,dec,dec,un,un);
+        printf("\n\n\n\n\n");
+        fclose(pf);
 //cuando el usuario acierte la clave los tres testigos marcaran'*' y dejaremos de escanear las respuestas del usuario para graficar el candado abierto
-}while((cent!='*')||(dec!='*')||(un!='*'));
-delay(1);
-pf=fopen("proyecto/candado_abierto.txt" , "r");
-imprime(pf,0);
-fclose(pf);
+    }
+    while((cent!='*')||(dec!='*')||(un!='*'));
+    delay(1);
+    pf=fopen("proyecto/candado_abierto.txt", "r");
+    imprime(pf,0);
+    fclose(pf);
 //delay(2);
-laberinto();
+    //laberinto();
 }
 void laberinto()
 {
@@ -155,14 +155,16 @@ void laberinto()
         {
             //si es la primera vez que realizamos este bucle(eso lo sabemos porque a=0) no le pediremos al usuario que introduzca tecla e imprimiremos directamente el mapa
             if(a==1) avancex=-1;
-            else{
-            c=getch();
-            if(c=='w')  avancex=-1;
-            if(c=='s')  avancex=1;
-            if(c=='a')  avancey=-1;
-            if(c=='d')  avancey=1;
-            if(c=='*')  x=39,y=39;
-        }a++;
+            else
+            {
+                c=getch();
+                if(c=='w')  avancex=-1;
+                if(c=='s')  avancex=1;
+                if(c=='a')  avancey=-1;
+                if(c=='d')  avancey=1;
+                if(c=='*')  x=39,y=39;
+            }
+            a++;
         }
         while(avancex==0&&avancey==0);
         x=x+avancex;
@@ -186,16 +188,18 @@ void laberinto()
             {
                 for(int j=ymin; j<ymax+1; j++)
                 {
-                    if((i!=xmax)||(k=1)){
-                    if((x==i)&&(y==j))printf("    ");
-                    else
+                    if((i!=xmax)||(k=1))
                     {
-                        if(imagen[i][j]=='M') printf("%c%c%c%c",219,219,219,219);
-                        if(imagen[i][j]=='.')printf("%c%c%c%c", 176,176,176,176);
-                        if(imagen[i][j]=='/')printf("%c%c%c%c",178,178,178,178);
+                        if((x==i)&&(y==j))printf("    ");
+                        else
+                        {
+                            if(imagen[i][j]=='M') printf("%c%c%c%c",219,219,219,219);
+                            if(imagen[i][j]=='.')printf("%c%c%c%c", 176,176,176,176);
+                            if(imagen[i][j]=='/')printf("%c%c%c%c",178,178,178,178);
+                        }
+                        if((j==ymax)&&(i!=xmax)) printf("\n");
                     }
-                    if((j==ymax)&&(i!=xmax)) printf("\n");
-                }}
+                }
             }
         }
     }
@@ -315,6 +319,46 @@ void tiempo2(void)
     printf("%i",n2-n1);
     fclose(pez1);
 }
+void carga(void)
+{
+    delay(1);
+    FILE *pf;
+    //imprimimos la pantalla de carga
+    pf=fopen("Proyecto/carga.txt","r");
+    if(pf==NULL)printf("aaaa");
+    imprime(pf,0);
+    //imprimimos 10000 saltos de linea
+    for(int i=0; i<10000; i++)printf("\n");
+    char a='0';
+    do {
+    //imprimimos el menu inicial
+    pf=fopen("Proyecto/pantalla inicial.txt", "r");
+    imprime(pf,0);
+    scanf("%c", &a);
+    if(a=='3')
+    {
+        //imprimimos las opciones que tenemos en ajustes
+        pf=fopen("Proyecto/ajustes.txt","r");
+        imprime(pf,0);
+        getch();
+    }
+    if(a=='2'){
+     //imprimimos las pruebas que se pueden practicar y le pedimos que nos diga cual quiere
+     pf=fopen("Proyecto/modo_practica.txt","r");
+     imprime(pf,0);
+     char practica;
+     do{
+        scanf("%c" , &practica);
+        if(practica=='1')laberinto();
+        if(practica=='2')ice_cave();
+        if(practica=='4')candado();
+        if(practica=='3')habitacion();
+        delay(1);
+     }while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
+    }
+    }while(a!='1');
+    fclose(pf);
+}
 void imprime(FILE *pf,int solucion)
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -322,10 +366,11 @@ void imprime(FILE *pf,int solucion)
     while(fscanf(pf, "%c",&foto) !=EOF )
     {
         if(foto=='º') delay(1);
-        else if(foto=='%') printf("%i"  , solucion/1000);
-        else if(foto=='#') printf("%i" , (solucion%1000)/100);
-        else if(foto=='+') printf("%i" , (solucion%100)/10);
-        else if(foto=='&') printf("%i" , (solucion%10));
+        else if(foto=='^')delay(0.5);
+        else if(foto=='%') printf("%i", solucion/1000);
+        else if(foto=='#') printf("%i", (solucion%1000)/100);
+        else if(foto=='+') printf("%i", (solucion%100)/10);
+        else if(foto=='&') printf("%i", (solucion%10));
         else printf("%c",foto);
     }
 }
