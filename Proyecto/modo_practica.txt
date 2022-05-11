@@ -1,0 +1,30 @@
+
+
+
+
+
+1.laberinto
+
+
+
+2.zona helada
+
+
+
+3.habitacion con mapa
+
+
+
+4.candado con testigos
+
+
+
+9-salir
+
+
+
+
+
+
+
+introduce el numero de la sala que quieres practicar.

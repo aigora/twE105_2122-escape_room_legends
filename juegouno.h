@@ -17,5 +17,6 @@ void oscuridad1(void );
 void habitacion(void );
 void imprime(FILE *pf,int);
 void ice_cave(void);
+void carga(void);
 
 #endif // JUEGOUNO_H_INCLUDED
