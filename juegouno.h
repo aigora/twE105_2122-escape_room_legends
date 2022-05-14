@@ -10,8 +10,7 @@
 //void mapa(int , int);
 void candado(void);
 void laberinto(void);
-void tiempo1(void);
-void tiempo2(void);
+void grafica(char imagen[50][50]);
 void casa(void );
 void oscuridad1(void );
 void habitacion(void );

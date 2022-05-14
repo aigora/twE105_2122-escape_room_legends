@@ -6,110 +6,104 @@ typedef struct
     char nombre[20];
     int devuelve;
 } provincia;
+void imprimefn(char *pf,int x,int y,int xmax,int xmin,int ymax,int ymin,int N)
+{
+//el puntero pf apunta a la matriz de caracteres que queremos imprimir
+    for(int i=xmin; i<xmax; i++)
+    {
+        //usamos este bucle for  para ddar el doble de grosor a los bloques
+        for(int k=0; k<2; k++)
+        {
+            for(int j=ymin; j<ymax; j++)
+            {
+                /*como el mapa en la matriz esta por asi decirlo encriptado lo desencriptamos con este if else
+                si las coordenadas a dibujar coinciden con las del jugador no imprimimos nada , si estas coinciden
+                con una M imprimimos una pared y si estas coinciden con un . imprimimos el fondo*/
+                if(x==i&&y==j) printf("    ");
+                else
+                {
+                    if(*(pf + i*N + j )=='M')printf("%c%c%c%c", 219,219,219,219);
+                    if(*(pf + i*N + j )=='.')printf("%c%c%c%c", 177,177,177,177);
+                    if(*(pf + i*N + j )=='/')printf("%c%c%c%c", 178,178,178,178);
+                }
+            }
+            printf("\n");
+        }
+    }
+}
 void ice_cave()
 {
-    printf("\n\n\n");
-    int a=0;
     FILE *pf;
-    char imagen[12][13];
+    char imagen[12][12],*matrix;
     //cargamos el mapa en una matriz de carateres
     pf=fopen("Proyecto/ice_cave.txt", "r");
-    for(int i=0; i<12; i++)
+    if(pf==NULL)printf("no se ha encontrado ice_cave.txt");
+    for(int i=0; i<11; i++)
     {
         for(int j=0; j<12; j++) fscanf(pf,"%c",&imagen[i][j]);
     }
-    int x=9,y=8;
+    //asociamos el puntero matrix a la matriz de caracteres
+    matrix  = &imagen[0][0];
+    int x=9,y=9;
+    imprimefn(matrix,x,y,12,0,12,0,12);
     do
     {
+        //avancex y avancey tomaran un valor u otro según la tecla pulsada por el jugador y serviran para ver en que sentido se mueve
         int avancex=0,avancey=0;
         char c;
         do
         {
-            /*escaneamos la letra que pulsa el usuario y gracias a avancex y avance y vemos que coordenada hay que aumentar
-            si es la primera vez que este bucle se ejecuta la variable a valdra 0 por lo que se imprimira el mapa en la posicion
-            inicial sin necesidad de pulsar ninguna tecla*/
-            if(a==0) c='d';
-            else c=getch();
+            c=getch();
             if(c=='w')avancex=-1;
             else if(c=='s')avancex=1;
             else if(c=='a')avancey=-1;
             else if(c=='d')avancey=1;
-            a++;
         }
         while((avancex!=0)&&(avancey!=0));
         do
         {
             //en este bucle movemos al personaje segun la tecla introducida y dibujamos su posicion cada vez que cambiamos sus coordenadas hasta llegar a la salida o chocar
+            imprimefn(matrix,x,y,12,0,12,0,12);
             x=x+avancex;
             y=y+avancey;
-            for(int i=0; i<11; i++)
-            {
-                if(imagen[x][y]!='M')
-                {
-                    //usamos este bucle para ddar el doble de grosor a los bloques
-                    for(int k=0; k<2; k++)
-                    {
-                        for(int j=0; j<11; j++)
-                        {
-                            /*en la matriz de caracteres las paredes vienen representadas con la letra'M'
-                            con este if lo que hacemos es no graficar el mapa si el personaje esta en las coordenadas de un obstaculo
-                            ya que es ilogico que este en una pared, por ello luego retrocedera una casilla*/
-
-                            if(imagen[x][y]!='M')
-                            {
-                                /*como el mapa en el fichero esta por asi decirlo encriptado lo desencriptamos con este if else
-                                si las coordenadas a dibujar coinciden con las del jugador no imprimimos nada , si estas coinciden
-                                con una M imprimimos una pared y si estas coinciden con un . imprimimos el fondo*/
-                                if(x==i&&y==j) printf("    ");
-                                else
-                                {
-                                    if(imagen[i][j]=='M')printf("%c%c%c%c", 219,219,219,219);
-                                    if(imagen[i][j]=='.'||imagen[i][j]=='/')printf("%c%c%c%c", 176,176,176,176);
-                                }
-                            }
-                        }
-                        printf("\n");
-                    }
-                }
-            }
-            //imprimimos saltos de linea una vez acabado el mapa para centrar la siguiente graficacion del mapa
-            if(imagen[x][y]!='M')  printf("\n\n\n\n");
+            printf("\n\n\n\n\n");
             //esperamos un poco y avanzamos la posicion de nuevo como se indicaba al principio del bucle
             delay(0.075);
         }
-        while((imagen[x][y]!='M')&&((imagen[x][y]!='/')));
+        while((imagen[x][y]!='M')&&((imagen[x][y]!='#')));//el caracter'#'marca la salida, gracias a este caracter el jugador se detendra al llegar a esta
         //cuando las coordenadas del jugador coincidan con las de de un obstaculo retrocedemos una casilla para que no este el jugador dentro del obstaculo
         x=x-avancex;
         y=y-avancey;
     }
     while(x!=2||y!=9);
+    imprimefn(matrix,2,10,12,0,12,0,12);
+    delay(0.5);
 }
-
 void candado()
 {
-//creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
+    //creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
     char respuesta[3];
     char cent='~',dec='~',un='~';
     FILE *pf;
     //imprimimos las instrucciones de la siguiente prueba y damos comienzo a la misma
     pf=fopen("Proyecto/texto_ice_cave.txt","r");
     imprime(pf,0);
-    pf=fopen("proyecto/candado.txt", "r");
-//graficamos una primera vez el candado y le pedimos al usuario que introduzca una clave
+    pf=fopen("Proyecto/candado.txt", "r");
+    //graficamos una primera vez el candado y le pedimos al usuario que introduzca una clave
     imprime(pf,0);
     printf("                [][][][][][][][][][][]\n                [][][][][][][][][][][]\n\n\n\n\n\n\n ...introduce una contraseñna de 3 digitos...");
     fclose(pf);
     do
     {
         scanf("%s", respuesta);
-//para que la funcion no se rompa si el usuario introduce un caracter en vez de un numero por accidente,almacenamos inicialmente la respuesta en una cadena de carcteres que mas tarde convertimos a un entero
+        //para que la funcion no se rompa si el usuario introduce un caracter en vez de un numero por accidente,almacenamos inicialmente la respuesta en una cadena de carcteres que mas tarde convertimos a un entero
         int solucion=((respuesta[0]-48)*1000+(respuesta[1]-48)*100+(respuesta[2]-48)*10);
         FILE *pf;
-        pf=fopen("proyecto/candado.txt", "r");
-//graficamos el candado con los caracteres que ha introducido el usuario
+        pf=fopen("Proyecto/candado.txt", "r");
+        //graficamos el candado con los caracteres que ha introducido el usuario
         imprime(pf,solucion);
         cent='~',dec='~',un='~';
-//revisamos la clave introducida por el usuario y en base a la clave q2ue sea los testigos toman unos valores u otros
+        //revisamos la clave introducida por el usuario y en base a la clave q2ue sea los testigos toman unos valores u otros
         if ((respuesta[0]-48)==2) cent='*';
         else if(((respuesta[0]-48)==5)||((respuesta[0]-48)==1))cent='/';
         if ((respuesta[1]-48)==1) dec='*';
@@ -120,56 +114,52 @@ void candado()
         printf("                [][]%c%c[][]%c%c[][]%c%c[][]\n                [][][][][][][][][][][]\n\n",cent,cent,dec,dec,un,un);
         printf("\n\n\n\n\n");
         fclose(pf);
-//cuando el usuario acierte la clave los tres testigos marcaran'*' y dejaremos de escanear las respuestas del usuario para graficar el candado abierto
+        //cuando el usuario acierte la clave los tres testigos marcaran'*' y dejaremos de escanear las respuestas del usuario para graficar el candado abierto
     }
     while((cent!='*')||(dec!='*')||(un!='*'));
     delay(1);
-    pf=fopen("proyecto/candado_abierto.txt", "r");
+    pf=fopen("Proyecto/candado_abierto.txt", "r");
     imprime(pf,0);
     fclose(pf);
-//delay(2);
+    //delay(2);
     //laberinto();
 }
 void laberinto()
 {
     FILE *pf;
-    int a=1;
     //imprimimos las instrucciones de la prueba
-    pf=fopen("proyecto/texto_laberinto.txt", "r");
+    pf=fopen("Proyecto/texto_laberinto.txt", "r");
     imprime(pf,0);
-    char imagen[41][42];
+    char *matrix, imagen[41][41];
     //abrimos el fichjero en el que se encuentra dibujado con caracteres el mapa y almacenamos el mapa en una matriz de caracteres
-    pf=fopen("proyecto/laberinto.txt", "r");
+    pf=fopen("Proyecto/laberinto.txt", "r");
     for(int i=0; i<41; i++)
     {
         for(int j=0; j<42; j++) fscanf(pf,"%c",&imagen[i][j]);
     }
+    //al puntero matrix,usado para imprimir el mapa, le asignamos la direccion de memoria de imagen[0][0];
+    matrix=&imagen[0][0];
     char c;
     //coordenadas iniciales del jugador
-    int x=2,y=1;
+    int x=1,y=1;
+    imprimefn(matrix,x,y,15,0,14,0,41);
     do
     {
         //escaneamos la tecla que pulsa el jugador y dependidendo de que tecla sea aumentaremos o reduciremos sus coordenadas en el eje x o y
         int avancex=0,avancey=0;
         do
         {
-            //si es la primera vez que realizamos este bucle(eso lo sabemos porque a=0) no le pediremos al usuario que introduzca tecla e imprimiremos directamente el mapa
-            if(a==1) avancex=-1;
-            else
-            {
-                c=getch();
-                if(c=='w')  avancex=-1;
-                if(c=='s')  avancex=1;
-                if(c=='a')  avancey=-1;
-                if(c=='d')  avancey=1;
-                if(c=='*')  x=39,y=39;
-            }
-            a++;
+            c=getch();
+            if(c=='w')  avancex=-1;
+            if(c=='s')  avancex=1;
+            if(c=='a')  avancey=-1;
+            if(c=='d')  avancey=1;
+            if(c=='*')  x=39,y=39;
         }
         while(avancex==0&&avancey==0);
         x=x+avancex;
         y=y+avancey;
-        //si las coordenadas del jugador coinciden con un obstaculo(identificable en la matriz de caracteres con el caracter'M')
+        //si las coordenadas del jugador coinciden con un obstaculo(identificable en la matriz de caracteres con el caracter'M')retrocede una casilla para asi no estar sobre el obstaculo
         if(imagen[x][y]=='M')
         {
             x=x-avancex;
@@ -181,34 +171,13 @@ void laberinto()
         if(xmin<0)  xmin=0,xmax=xmin+15;
         if(ymax>41) ymax=41,ymin=ymax-14;
         if(ymin<0)  ymin=0,ymax=ymin+14;
-        //para cada fila almacenamos los caracteres a imorimir en una cadena de caracteres que imprimimos dos veces para dar mas grosor al dibujo
-        for(int i=xmin; i<xmax+1; i++)
-        {
-            for(int k=0; k<2; k++)
-            {
-                for(int j=ymin; j<ymax+1; j++)
-                {
-                    if((i!=xmax)||(k=1))
-                    {
-                        if((x==i)&&(y==j))printf("    ");
-                        else
-                        {
-                            if(imagen[i][j]=='M') printf("%c%c%c%c",219,219,219,219);
-                            if(imagen[i][j]=='.')printf("%c%c%c%c", 176,176,176,176);
-                            if(imagen[i][j]=='/')printf("%c%c%c%c",178,178,178,178);
-                        }
-                        if((j==ymax)&&(i!=xmax)) printf("\n");
-                    }
-                }
-            }
-        }
+        //imprimimos el mapa con las coordenadas del jugador y los margenes establecidos
+        imprimefn(matrix,x,y,xmax,xmin,ymax,ymin,41);
     }
     //si las coordenadas del jugador coinciden con el caracter '/'que es el que indica el fin del mapa terminamos el bucle
     while(imagen[x][y]!='/');
     delay(1);
 }
-
-//////////////////////////
 void habitacion(void )
 {
     FILE *pf;
@@ -298,27 +267,7 @@ void oscuridad1(void )
     delay(1);
     printf("\n\n\n\n");
 }
-void tiempo1(void)
-{
-    FILE *pez1;
-    time_t now = time(NULL);
-    pez1= fopen("Proyecto/Hora.txt","w");
-    fprintf(pez1,"%i,",now);
-    fclose(pez1);
-}
-void tiempo2(void)
-{
-    FILE *pez1;
-    time_t now = time(NULL);
-    pez1= fopen("Proyecto/Hora.txt","a");
-    fprintf(pez1,"%i,",now);
-    fclose(pez1);
-    int n1=0,n2=0;
-    pez1= fopen("Proyecto/Hora.txt","r");
-    fscanf(pez1,"%i,%i",&n1,&n2);
-    printf("%i",n2-n1);
-    fclose(pez1);
-}
+
 void carga(void)
 {
     delay(1);
@@ -330,34 +279,40 @@ void carga(void)
     //imprimimos 10000 saltos de linea
     for(int i=0; i<10000; i++)printf("\n");
     char a='0';
-    do {
-    //imprimimos el menu inicial
-    pf=fopen("Proyecto/pantalla inicial.txt", "r");
-    imprime(pf,0);
-    scanf("%c", &a);
-    if(a=='3')
+    do
     {
-        //imprimimos las opciones que tenemos en ajustes
-        pf=fopen("Proyecto/ajustes.txt","r");
+        //imprimimos el menu inicial
+        pf=fopen("Proyecto/pantalla inicial.txt", "r");
         imprime(pf,0);
-        getch();
+        scanf("%c", &a);
+        if(a=='3')
+        {
+            //imprimimos las opciones que tenemos en ajustes
+            pf=fopen("Proyecto/ajustes.txt","r");
+            imprime(pf,0);
+            getch();
+        }
+        if(a=='2')
+        {
+            //imprimimos las pruebas que se pueden practicar y le pedimos que nos diga cual quiere
+            pf=fopen("Proyecto/modo_practica.txt","r");
+            imprime(pf,0);
+            char practica;
+            do
+            {
+                scanf("%c", &practica);
+                if(practica=='1')laberinto();
+                if(practica=='2')ice_cave();
+                if(practica=='4')candado();
+                if(practica=='3')habitacion();
+                delay(1);
+            }
+            while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
+        }
     }
-    if(a=='2'){
-     //imprimimos las pruebas que se pueden practicar y le pedimos que nos diga cual quiere
-     pf=fopen("Proyecto/modo_practica.txt","r");
-     imprime(pf,0);
-     char practica;
-     do{
-        scanf("%c" , &practica);
-        if(practica=='1')laberinto();
-        if(practica=='2')ice_cave();
-        if(practica=='4')candado();
-        if(practica=='3')habitacion();
-        delay(1);
-     }while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
-    }
-    }while(a!='1');
+    while(a!='1');
     fclose(pf);
+    delay(1);
 }
 void imprime(FILE *pf,int solucion)
 {
@@ -372,5 +327,12 @@ void imprime(FILE *pf,int solucion)
         else if(foto=='+') printf("%i", (solucion%100)/10);
         else if(foto=='&') printf("%i", (solucion%10));
         else printf("%c",foto);
+    }
+}
+void grafica(char imagen[50][50])
+{
+    for(int a=0; a<11; a++)
+    {
+        for(int b=0; b<11; b++ ) printf("%c", imagen[a][b]);
     }
 }
