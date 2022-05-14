@@ -181,26 +181,26 @@ void laberinto()
 void habitacion(void )
 {
     FILE *pf;
-    int respuesta1;
+    char respuesta1;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
     delay(2.5);
     int c1;
     do
     {
         printf("\n\n\n\n");
-        pf = fopen("Proyecto/Imagen Estaneria Mapa Puerta Cerrada.txt", "r");
-        imprime(pf,0);
-        do
-        {
-            scanf("%i",&respuesta1);
-        }
-        while ((respuesta1!=1)&&(respuesta1!=2)&&(respuesta1!=3));
-        if(respuesta1==2)
+        pf = fopen("Proyecto/Imagen Estaneria Mapa Puerta Cerrada.txt", "r"); //Este programa abre un fichero en el cual se encuentra un dibujo con caracteres ASCII
+        imprime(pf,0); //esta linea hace que se imprima el fichero mediante una funcion, la cual se ejecutará en otra parte.
+        scanf("%c",&respuesta1);
+        if((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//estas lineas guardan un imput de parte del usuario, y se aseguran de
+            while((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//limitar los posibles imputs que se pueden introducir
+        scanf("%c",&respuesta1);
+
+        if(respuesta1=='2') //La opcion 2 corresponde a la opcion Estanteria
         {
             int res=0;
-            pf = fopen("Proyecto/Estanteria.txt", "r");
-            imprime(pf,0);
-            provincia estanteria[17];
+            pf = fopen("Proyecto/Estanteria.txt", "r"); //Se abre un archivo en el cual se encuentran escritos todos los nombre de los libros
+            imprime(pf,0); //Se manda ese fichero a la funcion imprime para que se imprima
+            provincia estanteria[17]; //Se nombra una estructura que contiene informacion acerca de los 17 libros
             pf = fopen("Proyecto/Matriz_Provincias.txt", "r");
             for(int i=0; i<17; i++)fscanf(pf, " %[^;];%i\n",estanteria[i].nombre,&estanteria[i].devuelve);
             do
@@ -208,37 +208,36 @@ void habitacion(void )
                 scanf("%i",&res);
                 if((res>0)&&(res<19)) printf("\n ... Abres el libro de %s, y ves que en la primera pagina esta escrito en grande el numero '%i' ... \n",estanteria[res-1].nombre,estanteria[res-1].devuelve);
             }
-            while (res!=18);
+            while (res!=18); //Si el usuario pulsa 18, el programa vuelve a la habitacion anterior
         }
-        if(respuesta1==1)
+        if(respuesta1=='1') //La opcion 1 corresponde a la opcion puerta, en la cual se resuelve, o no, el candado
         {
-            int respuesta2;
-            pf = fopen("Proyecto/Puerta.txt", "r");
-            imprime(pf,0);
-            do
-            {
-                scanf("%i", &respuesta2);
-            }
-            while((respuesta2!=1)&&(respuesta2!=2));
-            if(respuesta2==1)
+            char respuesta2;
+            pf = fopen("Proyecto/Puerta.txt", "r"); //Se abre una funcion que contiene una imagen ampliada de la puerta
+            imprime(pf,0); //Se manda a imprimir la puerta en la funcion imprime
+            scanf("%c",&respuesta2);
+            if((respuesta2!='1')&&(respuesta2!='2')) //Se introducen unas lineas que tienen la funcion de guardar la respuesta
+            while((respuesta2!='1')&&(respuesta2!='2'))//del usuario, a la vez de asegurarse de que son los esperados.
+            scanf("%c",&respuesta2);
+            if(respuesta2=='1')
             {
                 do
                 {
-                    pf = fopen("Proyecto/Puerta Candado Cerrado.txt", "r");
-                    imprime(pf,c1);
-                    char numeropalabra[5]="0000";
+                    pf = fopen("Proyecto/Puerta Candado Cerrado.txt", "r"); //Se abre un fichero con la imagen de la puerta y un candado cerrado
+                    imprime(pf,c1); //Se manda a imprimir el fichero en la funcion imprime
+                    char numeropalabra[5]="0000"; //se crea un string que absorbe 5 caracteres
                     scanf(" %s",numeropalabra);
-                    c1=1000*(numeropalabra[0]-48)+100*(numeropalabra[1]-48)+10*(numeropalabra[2]-48)+(numeropalabra[3]-48);
+                    c1=1000*(numeropalabra[0]-48)+100*(numeropalabra[1]-48)+10*(numeropalabra[2]-48)+(numeropalabra[3]-48); //estalinea convierte un caracter en texto, y ese texto en una unidad,decena,centena, o milena.
                 }
                 while((c1!=1492)&&(c1!=1800));
                 if(c1==1492)
                 {
-                    pf = fopen("Proyecto/Puerta Candado Abierto.txt", "r");
+                    pf = fopen("Proyecto/Puerta Candado Abierto.txt", "r"); //Si resuelves el candado, se abre un nuevo fichero que contiene una imagen del candado abierto
                     imprime(pf,c1);
                 }
             }
         }
-        if(respuesta1 == 3)
+        if(respuesta1 == '3') //En el caso de la opcion 3, apareceran en la pantalla una animacion con diferentes mapas de España
         {
             pf = fopen("Proyecto/Mapa Espana.txt", "r");
             imprime(pf,0);
@@ -252,16 +251,15 @@ void habitacion(void )
 void casa(void )
 {
     FILE *pf;
-    pf = fopen("Proyecto/Puerta Entrada.txt", "r");
-    int respuesta;
+    pf = fopen("Proyecto/Puerta Entrada.txt", "r"); //Esta funcion imprime una imagen guardada en un fichero, que se imprimira mediante la funcion imprime
     imprime(pf,0);
-    while ((respuesta!=1)&&(respuesta!=2)) scanf("%i", &respuesta);
+
     fclose(pf);
 }
 void oscuridad1(void )
 {
     FILE *pf;
-    pf=fopen("Proyecto/Oscuridad.txt", "r");
+    pf=fopen("Proyecto/Oscuridad.txt", "r"); //Esta funcion imprime una imagen guardada en un fichero, que se imprimira mediante la funcion imprime
     imprime(pf,0);
     getch();
     delay(1);
@@ -316,8 +314,8 @@ void carga(void)
 }
 void imprime(FILE *pf,int solucion)
 {
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    char foto;
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n"); //La funcion imrime actua como un restaurante en el cual al chef le llegan comandas, y el chef cocina lo que se le pide.
+    char foto; //En este caso la funcion imprime funciona como chef, y las comandas vienen de las distintas funciones void alojadas a lo largo de todo el programa
     while(fscanf(pf, "%c",&foto) !=EOF )
     {
         if(foto=='º') delay(1);
@@ -335,4 +333,9 @@ void grafica(char imagen[50][50])
     {
         for(int b=0; b<11; b++ ) printf("%c", imagen[a][b]);
     }
+}
+void fin(void)
+{
+    int a;
+    a=0;
 }
