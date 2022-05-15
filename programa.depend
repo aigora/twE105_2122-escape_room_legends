@@ -24,7 +24,7 @@
 	<stdlib.h>
 	<time.h>
 
-1652486459 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.c
+1652612330 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\juegouno.c
 	"juegouno.h"
 	"adddelay.h"
 
@@ -35,7 +35,7 @@
 	<stdlib.h>
 	<time.h>
 
-1652127054 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\main.c
+1652612672 source:c:\users\gonzalo\documents\github\twe105_2122-escape_room_legends\main.c
 	"juegouno.h"
 	"adddelay.h"
 

@@ -253,7 +253,6 @@ void casa(void )
     FILE *pf;
     pf = fopen("Proyecto/Puerta Entrada.txt", "r"); //Esta funcion imprime una imagen guardada en un fichero, que se imprimira mediante la funcion imprime
     imprime(pf,0);
-
     fclose(pf);
 }
 void oscuridad1(void )
@@ -314,10 +313,12 @@ void carga(void)
 }
 void imprime(FILE *pf,int solucion)
 {
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n"); //La funcion imrime actua como un restaurante en el cual al chef le llegan comandas, y el chef cocina lo que se le pide.
-    char foto; //En este caso la funcion imprime funciona como chef, y las comandas vienen de las distintas funciones void alojadas a lo largo de todo el programa
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");//la funciojn imprime muestra en pantalla el contenido de un fichero que le haya sido dado.
+    char foto;
     while(fscanf(pf, "%c",&foto) !=EOF )
     {
+        //los ficheros tienen caracteres clave por asi decirlo que pretenden realizar una accion que no se puede realizar desde el fichero como es el caso de 'º' que indica que se ha de realizar una poausa de un segundo
+        //hay otros carcteres como '%' que pretenden imprimir en pantalla numeros que haya introducido el usuario que no estan almacenados en el fichero
         if(foto=='º') delay(1);
         else if(foto=='^')delay(0.5);
         else if(foto=='%') printf("%i", solucion/1000);
@@ -326,16 +327,4 @@ void imprime(FILE *pf,int solucion)
         else if(foto=='&') printf("%i", (solucion%10));
         else printf("%c",foto);
     }
-}
-void grafica(char imagen[50][50])
-{
-    for(int a=0; a<11; a++)
-    {
-        for(int b=0; b<11; b++ ) printf("%c", imagen[a][b]);
-    }
-}
-void fin(void)
-{
-    int a;
-    a=0;
 }
