@@ -251,3 +251,196 @@ int main()
   return 0;
 
 }
+
+
+void prueba1()
+{
+char c;
+FILE *p1;
+p1 = fopen("prueba1.txt", "r");
+if (p1 == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(p1,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(p1);
+
+}
+
+void prueba2()
+{
+char c;
+FILE *p2;
+p2 = fopen("prueba2.txt", "r");
+if (p2 == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(p2,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(p2);
+}
+
+void prueba3()
+{
+char c;
+FILE *p3;
+p3 = fopen("prueba3.txt", "r");
+if (p3 == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(p3,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(p3);
+
+}
+
+void prueba4()
+{
+char c;
+FILE *p4;
+p4 = fopen("prueba4.txt", "r");
+if (p4 == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(p4,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(p4);
+}
+
+void matematica()
+{
+char c;
+FILE *mat;
+mat = fopen("matematica.txt", "r");
+if (mat == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(mat,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(mat);
+}
+void casa()
+{
+char c;
+FILE *casa;
+casa = fopen("casa.txt", "r");
+if (casa == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(casa,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(casa);
+}
+
+void puertas()
+{
+char c;
+FILE *puerta;
+puerta = fopen("3puertas.txt", "r");
+if (puerta == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(puerta,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(puerta);
+}
+void mesa()
+{
+char c;
+FILE *mesa;
+mesa = fopen("mesa.txt", "r");
+if (mesa == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(mesa,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(mesa);
+}
+
+void pistas()
+{
+ char c;
+FILE *pistas;
+pistas = fopen("pistas.txt", "r");//se abre el fichero que contiene el letrero en modo lectura
+if (pistas == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(pistas,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(pistas);
+}
+
+void letras()
+{
+ char c;
+FILE *letras;
+letras = fopen("letras.txt", "r");
+if (letras == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(letras,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(letras);
+}
+
+void suma()
+{
+ char c;
+FILE *suma;
+suma = fopen("suma_encriptada.txt", "r");
+if (suma == NULL)
+{
+printf("\nEl fichero no pudo ser abierto.");
+}
+while (fscanf(suma,"%c",&c) != EOF)
+printf ("%c",c);
+printf("\n");
+fclose(suma);
+}
+
+void peluche()
+{
+    char c;
+    FILE *fd;
+    fd =fopen("luz.txt","r");
+    if (fd == NULL)
+    {
+        printf("\nEl fichero no pudo ser abierto.");
+    }
+    while (fscanf(fd,"%c",&c) != EOF)
+    printf ("%c",c);
+    printf("\n");
+    fclose(fd);
+    delay(0.5);
+    system("cls");
+}
+
+void delay(float number_of_seconds)//añade una pequeña pausa al igual que lo haria "sleep"
+{
+
+float milli_seconds = 1000 * number_of_seconds;
+
+clock_t start_time = clock();
+
+while (clock() < start_time + milli_seconds);
+}
