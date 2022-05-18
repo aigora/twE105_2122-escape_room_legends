@@ -2,7 +2,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-
+void prueba1();
+void prueba2();
+void prueba3();
+void prueba4();
+void matematica();
+void casa();
+void puertas();
+void mesa();
+void pistas();
+void letras();
+void suma();
+void peluche();
+void delay(float number_of_seconds);
 int main()
 {
 
