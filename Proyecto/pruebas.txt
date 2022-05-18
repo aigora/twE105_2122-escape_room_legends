@@ -1,0 +1,12 @@
+Acertijo sencillo, nos dice ¿Cómo podemos hacer que cuatro nueves den como resultado cien?
+En esta ocasión nos encontramos con una serie de igualdades, de las cuales tenemos que resolver la última. 
+Es más sencillo de lo que parece.
+8806=6 7111=0 2172=0 6666=4 1111=0 7662=2 9312=1 0000=4 2222=0 3333=0 5555=0 8193=3 8096=5 7777=0 9999=4 7756=1 6855=3 9881=5 5531=0 2581= ¿?
+La policía está vigilando de cerca una guarida de una banda de ladrones, los cuales han dispuesto algún tipo de contraseña para poder entrar. 
+Observan como uno de ellos llega a la puerta y llama. Desde el interior se dice 8 y la persona contesta 4, respuesta ante la cual la puerta se abre.
+Llega otro y le preguntan por el número 14, a lo que contesta 7 y también pasa. 
+Uno de los agentes decide intentar infiltrarse y se acerca a la puerta: desde el interior le preguntan por el número 6, a lo él responde 3. 
+Sin embargo debe retirarse ya que no solo no abren la puerta sino que empieza a recibir disparos desde el interior. 
+¿Cuál es el truco para adivinar la contraseña y qué error ha cometido el policia?
+Un problema con dos posibles soluciones, ambas válidas. Se trata de indicar qué número falta tras ver estas operaciones. 
+1+4=5 2+5=12 3+6=21 8+11=¿?
