@@ -10,6 +10,8 @@ Luis Peñaranda del Mazo, Luispdelmazo
 
 Alejandro Beltran Suarez, alejandro.beltran.suarez
 
+Gonzalo Stampa Garcia, gonzalosta
+
 ## Objetivos del trabajo
 
 [Lista de los objetivos que se persiguen con el trabajo propuesto.]
