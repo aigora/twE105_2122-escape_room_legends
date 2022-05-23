@@ -1,7 +1,7 @@
 
-            ___________________________________________________________________________________
-           |                                                                                   |
-	   |	Un problema con dos posibles soluciones, ambas validas. Se trata de indicar    |
-	   |	que numero falta tras ver estas operaciones.                                   |
-	   |	1+4=5 2+5=12 3+6=21 8+11= ?                                                    |
-           |___________________________________________________________________________________|
+          ___________________________________________________________________________________
+         |                                                                                   |
+         |    Un problema con dos posibles soluciones, ambas validas. Se trata de indicar    |
+         |    que numero falta tras ver estas operaciones.                                   |
+         |    1+4=5 2+5=12 3+6=21 8+11= ?                                                    |
+         |___________________________________________________________________________________|

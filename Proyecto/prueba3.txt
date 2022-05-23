@@ -1,10 +1,11 @@
 
-     _______________________________________________________________________________________________________________________________________________
-    |                                                                                                                                               |
-    |	La policia esta vigilando de cerca una guarida de una banda de ladrones, los cuales tienen un tipo de codigo para poder entrar.             |
-    |	Observan como llega un bandido a la puerta y llama. Desde el interior se dice 8 y el contesta 4, respuesta ante la cual la puerta se abre.  |
-    |	Llega otro y le preguntan por el numero 14, a lo que contesta 7 y tambien pasa.                                                             |
-    |	Uno de los agentes decide intentar y se acerca a la puerta: desde el interior le preguntan por el numero 6, a lo que el responde 3.         |
-    |	Sin embargo debe retirarse ya que no solo no abren la puerta sino que empieza a recibir disparos desde el interior.                         |
-    |	Cual es el codigo correcto?                                                                                                                 |
-    |_______________________________________________________________________________________________________________________________________________|
+  __________________________________________________________________________________________________________________________________
+ |                                                                                                                                  |
+ |  La policia esta vigilando de cerca una guarida de una banda de ladrones, los cuales tienen un tipo de codigo para poder entrar. |
+ |  Observan como llega un bandido a la puerta y llama.                                                                             |
+ |  Desde el interior se dice 8 y el contesta 4, respuesta ante la cual la puerta se abre.                                          |
+ |  Llega otro y le preguntan por el numero 14, a lo que contesta 7 y tambien pasa.                                                 |
+ |  Uno de los agentes decide intentar y se acerca a la puerta: desde el interior le preguntan por el numero 6, el responde 3.      |
+ |  Sin embargo debe retirarse ya que no solo no abren la puerta sino que empieza a recibir disparos desde el interior.             |
+ |  Cual es el codigo correcto?                                                                                                     |
+ |__________________________________________________________________________________________________________________________________|

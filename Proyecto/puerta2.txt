@@ -1,6 +1,6 @@
-     Entras y ves 2 puertas....
+Entras y ves la siguiente puerta...
 
-     __________________________ 
+     __________________________  
     |           	       |
     |                          |
     |                          |
