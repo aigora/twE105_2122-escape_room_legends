@@ -5,6 +5,9 @@ typedef struct
     char nombre[20];
     int devuelve;
 } provincia;
+
+void imprime1(FILE *pf,int solucion);
+
 void imprimefn(char *pf,int x,int y,int xmax,int xmin,int ymax,int ymin,int N)
 {
 //el puntero pf apunta a la matriz de caracteres que queremos imprimir
@@ -381,22 +384,7 @@ void highscore(char nick[],int diff,float score)
 }
 
 
-////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////
-
-void imprime1(FILE *pf,int solucion);
 int enigmas1()
 {
     //Variables para las respuestas a las preguntas de tipo si/no.
@@ -422,7 +410,7 @@ int enigmas1()
     FILE *peluche;
     //Contadores
     int ptos,ptos1;
-
+    printf("\n\n\n\n");
     puerta = fopen("Proyecto/3puertas.txt", "r");//Apertura e impresion del fichero que contiene la primera puerta
     imprime1 (puerta,0);
     fclose(puerta);
@@ -692,7 +680,7 @@ int enigmas1()
 
 }
 
-void imprime2(FILE *pf,int solucion)
+void imprime1(FILE *pf,int solucion)
 {
     //la funciojn imprime muestra en pantalla el contenido de un fichero que le haya sido dado.
     char foto;

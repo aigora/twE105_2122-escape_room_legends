@@ -22,9 +22,11 @@ while((a!='1')){
 puntuacion = puntuacion  + (50-ice_cave()*dificultad);
 puntuacion = puntuacion  + (60-candado()*dificultad);
 puntuacion = puntuacion  + (300-laberinto()*dificultad);
+puntuacion = puntuacion  + (500-enigmas1()*dificultad);
 puntuacion = puntuacion  + (100-habitacion()*dificultad);
+
 //enigmas1();
-//puntuacion = puntuacion  + (500-enigmas()*habitacion);
+
 printf("\n\n\n\nEscribe tu nombre\n\n\n");
 scanf("%s",usuario);
 highscore(usuario,dificultad*10,puntuacion);
