@@ -15,6 +15,6 @@ void imprime(FILE *pf,int);
 int ice_cave(void);
 float carga(void);
 void highscore(char nick[],int diff,float score);
-int enigmas(void);
+int enigmas1(void);
 
 #endif // JUEGOUNO_H_INCLUDED

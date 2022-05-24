@@ -1,4 +1,4 @@
-#include"enigma.h"
+#include"enigmas.h"
 #include"juegouno.h"
 #include <stdio.h>
 #include <stdlib.h>

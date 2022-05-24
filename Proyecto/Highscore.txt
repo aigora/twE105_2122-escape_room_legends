@@ -4,6 +4,10 @@ Nombre:          Dificultad:          Puntuacion:
 
 paco 		 Muy Dificil 		 990.000000
 
+<<<<<<< HEAD
 juancarlos 		 Facil 		 1141.000000
 perico123 		 Dificil 		 1114.199951
 jaimichu 		 Muy Dificil 		 815.500000
+=======
+Pedro 		  		 1104.399902
+>>>>>>> d368d5895022f9e678d41e973226dfc415c17786

@@ -338,7 +338,7 @@ float carga(void)
                 if(practica=='2')ice_cave();
                 if(practica=='4')candado();
                 if(practica=='3')habitacion();
-                if(practica=='5')enigmas();
+                if(practica=='5')enigmas1();
                 delay(1);
             }
             while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
@@ -380,6 +380,7 @@ void highscore(char nick[],int diff,float score)
     fclose(pf);
 }
 
+
 ////////////////////////////////////////////////////////////////////
 
 
@@ -396,9 +397,8 @@ void highscore(char nick[],int diff,float score)
 /////////////////////////////////////////////////////////////////////
 
 void imprime1(FILE *pf,int solucion);
-int enigmas()
+int enigmas1()
 {
-
     char elige,elige1,e='1';
     int n,cod=501,cod1;
     int resp2=2,resp3=4,resp4[2]={40,96};
@@ -685,7 +685,7 @@ int enigmas()
 
 }
 
-void imprime1(FILE *pf,int solucion)
+void imprime2(FILE *pf,int solucion)
 {
     //la funciojn imprime muestra en pantalla el contenido de un fichero que le haya sido dado.
     char foto;
@@ -696,3 +696,4 @@ void imprime1(FILE *pf,int solucion)
     printf("\n");
     fclose(pf);
 }
+
