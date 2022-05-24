@@ -1,6 +1,6 @@
 # ESCAPE ROOM LEGENDS
 
-El proyecto consiste en un scape room , en este habra que superar varias mapas y pruebas para completarlo
+Vamos a realizar un Escape Room, habran diferentes habitaciones en donde debes realizar una prueba diferente en cada una de ellas para que al final cuando ya hayas conseguido superar las pruebas puedas salir del Escape Room. 
 
 ## Integrantes del equipo
 
