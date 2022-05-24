@@ -391,7 +391,7 @@ int enigmas1()
     char elige,elige1,e='1';
     //Variables que almacenan las respuestas correctas
     int cod=501;
-    char resp6[7]="etsidi",res6[7];
+    char resp6[7]="etsidi",resp7[7]="ETSIDI",resp8[7]="Etsidi",res6[7];
     //Variables que almacenan la respuesta del usuario para despues compararla con la respuesta correcta
     char a1,re,res1,res2,res3,res4;
     int cod1;
@@ -593,7 +593,7 @@ int enigmas1()
                 fclose(letras);
                 printf("\n\n\n\n\n\n\tResponde:");
                 scanf ("%s",res6);
-                if(strcmp(resp6, res6) == 0)
+                if(strcmp(resp6, res6) == 0||strcmp(resp7, res6) == 0||strcmp(resp8, res6) == 0)
                 {
                    printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
                    ptos1++;
