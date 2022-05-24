@@ -9,3 +9,9 @@
  | Sin embargo debe retirarse ya que no solo no abren la puerta sino que empieza a recibir disparos desde el interior.|
  | Cual es el codigo correcto?                                                                                        |
  |____________________________________________________________________________________________________________________|
+
+ELIGE LA OPCION CORRECTA:
+ 1) 5
+ 2) 4
+ 3) 6
+ 4) 2

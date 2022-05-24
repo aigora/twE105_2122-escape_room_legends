@@ -74,25 +74,24 @@
 	<stdlib.h>
 	<time.h>
 
-1653320075 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\juegouno.c
+1653413264 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\juegouno.c
 	"juegouno.h"
 	"adddelay.h"
 
-1652657164 d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\juegouno.h
+1653413264 d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\juegouno.h
 	<stdio.h>
 	<string.h>
 	<conio.h>
 	<stdlib.h>
 	<time.h>
 
-1653320198 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\main.c
+1653413264 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\main.c
 	"juegouno.h"
 	"adddelay.h"
-	"enigma.h"
 
-1653046422 d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\enigma.h
+1653413264 d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\enigma.h
 
-1653383032 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\enigma.c
+1653413264 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\enigma.c
 	"enigma.h"
 	"juegouno.h"
 	<stdio.h>
