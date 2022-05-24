@@ -21,4 +21,4 @@ Te encuentras con la siguiente puerta...
     |                          |
     |__________________________|
 
-Entras?		1.Si	2.No
+Entras?		1.Si
