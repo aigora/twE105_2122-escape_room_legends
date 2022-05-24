@@ -419,7 +419,7 @@ int enigmas1()
     scanf(" %c",&elige);
     if (elige!='1')
     {
-        printf ("\n\nEleccion incorrecta!!\n\nElige nuevamente\n\n\t\t");
+        printf ("\n\nRESPUESTA NO VALIDA!!\n\nElige nuevamente\n\n\t\t");
     }
      }while (elige!='1');//Bucle para volver a elegir una opcion correcta
 
@@ -549,7 +549,7 @@ int enigmas1()
     scanf(" %c",&elige1);
     if (elige1!='1')
     {
-        printf ("\n\nEleccion invalida!!\n\nElige nuevamente\n\n\t\t");
+        printf ("\n\nRESPUESTA NO VALIDA!!\n\nElige nuevamente\n\n\t\t");
     }
      }while (elige1!='1');//Bucle para volver a elegir una opcion correcta
 
