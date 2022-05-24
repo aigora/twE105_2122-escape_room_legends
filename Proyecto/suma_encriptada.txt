@@ -1,5 +1,6 @@
+    En el primer sobre encuentras una suma encriptada, tienes que elegir cual de las
+    opciones es la correcta.
 
-    
 	_____     _____     _____    _____          _____    _____    _____    _____
        |     |   |\    |   |        |		a) |\   /|  |\   /|  |\    |  |     |           	
        |_____|   |____\|   |_____   |              |/___\|  |/___\|  |____\|  |_____|

@@ -1,14 +1,14 @@
-Entras y ves la siguiente puerta...
+Te encuentras con la siguiente puerta...
 
      __________________________  
-    |           	       |
-    |                          |
-    |                          |
-    |            .             |
-    |           /|             |
-    |            |             |
-    |            |             |
-    |                          |
+    |           	       |	INSTRUCCIONES:
+    |                          |	-Al entrar encontraras una mesa con 3 sobres
+    |                          |        cada uno con un enigma diferente.
+    |                          |	-Para pasar a la siguiente prueba tendras que 
+    |                          |	Resolver todos los enigmas.
+    |                          |	-Si no logras resolver todos los enigmas entonces
+    |        HABITACION        |	El juego se reiniciara hasta que lo consigas.
+    |      DE LOS ENIGMAS      |
     |                          |
     |                          |
     |                      (O) |
@@ -20,3 +20,5 @@ Entras y ves la siguiente puerta...
     |                          |
     |                          |
     |__________________________|
+
+Entras?		1.Si	2.No

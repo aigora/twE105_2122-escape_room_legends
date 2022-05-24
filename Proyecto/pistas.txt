@@ -1,3 +1,7 @@
+    Con estos objetos tienes que identificar el nombre de un personaje muy conocido...
+    Ejemplo: Pedro Sanchez
+    Ojo!!!! con las mayusculas y minusculas, fijese bien en el ejemplo.
+
                                                                                             |||||||
           _         _             ______________________     ____________________         ||\    / ||
        __|_|_______|_|__         |                      |   |                    |       ||  \__/   ||
@@ -11,3 +15,6 @@
      \                   /       |                      |   |                    |      ||   /   \   ||
       \_________________/        |______________________|   |____________________|        ||/     \ ||
                                                                                             |||||||| 
+	  Cronometro			 Numero 8		     Fecha	        Balon de futbol
+
+     De que personaje se trata?
