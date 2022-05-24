@@ -1,10 +1,17 @@
 	SE ABRE LA PRIMERA CAJA Y VES EL PRIMER ACERTIJO....
 
          __________________________________________________________________________________________________
-	  |	                                                                                               |
+	|                                                                                                  |
         |                                                                                                  |
         |                                                                                                  |
-	  |	Acertijo sencillo, nos dice...Como podemos hacer que cuatro nueves den como resultado cien?    |
+	|   Acertijo sencillo, nos dice...Como podemos hacer que cuatro nueves den como resultado cien?    |
         |                                                                                                  |
         |                                                                                                  |
         |__________________________________________________________________________________________________|
+
+	Elige la opcion correcta:
+
+	1) 9*9+9-9
+	2) 9-9*99
+	3) 9/9+99
+	4) 99+9-9
