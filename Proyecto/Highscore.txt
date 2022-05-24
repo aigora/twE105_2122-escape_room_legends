@@ -1,0 +1,9 @@
+
+
+Nombre:          Dificultad:          Puntuacion:
+
+paco 		 Muy Dificil 		 990.000000
+
+juancarlos 		 Facil 		 1141.000000
+perico123 		 Dificil 		 1114.199951
+jaimichu 		 Muy Dificil 		 815.500000

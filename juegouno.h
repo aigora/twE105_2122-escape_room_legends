@@ -5,17 +5,16 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<time.h>
-//#include<conio.h>
-//void posicion(int , int );
-//void mapa(int , int);
-void candado(void);
-void laberinto(void);
-void grafica(char imagen[50][50]);
+int candado(void);
+int laberinto(void);
+//void grafica(char imagen[50][50]);
 void casa(void );
 void oscuridad1(void );
-void habitacion(void );
+int habitacion(void );
 void imprime(FILE *pf,int);
-void ice_cave(void);
-void carga(void);
+int ice_cave(void);
+float carga(void);
+void highscore(char nick[],int diff,float score);
+int enigmas(void);
 
 #endif // JUEGOUNO_H_INCLUDED

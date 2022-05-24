@@ -1,6 +1,5 @@
 #include "juegouno.h"
 #include "adddelay.h"
-
 typedef struct
 {
     char nombre[20];
@@ -31,8 +30,9 @@ void imprimefn(char *pf,int x,int y,int xmax,int xmin,int ymax,int ymin,int N)
         }
     }
 }
-void ice_cave()
+int ice_cave()
 {
+    time_t now= time(NULL);
     FILE *pf;
     char imagen[12][12],*matrix;
     //cargamos el mapa en una matriz de carateres
@@ -78,9 +78,11 @@ void ice_cave()
     while(x!=2||y!=9);
     imprimefn(matrix,2,10,12,0,12,0,12);
     delay(0.5);
+    return(time(NULL)-now);
 }
-void candado()
+int candado()
 {
+    time_t now=time(NULL);
     //creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
     char respuesta[3];
     char cent='~',dec='~',un='~';
@@ -121,11 +123,11 @@ void candado()
     pf=fopen("Proyecto/candado_abierto.txt", "r");
     imprime(pf,0);
     fclose(pf);
-    //delay(2);
-    //laberinto();
+    return(time(NULL)-now);
 }
-void laberinto()
+int laberinto()
 {
+    time_t now=time(NULL);
     FILE *pf;
     //imprimimos las instrucciones de la prueba
     pf=fopen("Proyecto/texto_laberinto.txt", "r");
@@ -177,9 +179,11 @@ void laberinto()
     //si las coordenadas del jugador coinciden con el caracter '/'que es el que indica el fin del mapa terminamos el bucle
     while(imagen[x][y]!='/');
     delay(1);
+    return(time(NULL)-now);
 }
-void habitacion(void )
+int habitacion(void )
 {
+    time_t now=time(NULL);
     FILE *pf;
     char respuesta1;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
@@ -193,7 +197,7 @@ void habitacion(void )
         scanf("%c",&respuesta1);
         if((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//estas lineas guardan un imput de parte del usuario, y se aseguran de
             while((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//limitar los posibles imputs que se pueden introducir
-        scanf("%c",&respuesta1);
+                scanf("%c",&respuesta1);
 
         if(respuesta1=='2') //La opcion 2 corresponde a la opcion Estanteria
         {
@@ -217,8 +221,8 @@ void habitacion(void )
             imprime(pf,0); //Se manda a imprimir la puerta en la funcion imprime
             scanf("%c",&respuesta2);
             if((respuesta2!='1')&&(respuesta2!='2')) //Se introducen unas lineas que tienen la funcion de guardar la respuesta
-            while((respuesta2!='1')&&(respuesta2!='2'))//del usuario, a la vez de asegurarse de que son los esperados.
-            scanf("%c",&respuesta2);
+                while((respuesta2!='1')&&(respuesta2!='2'))//del usuario, a la vez de asegurarse de que son los esperados.
+                    scanf("%c",&respuesta2);
             if(respuesta2=='1')
             {
                 do
@@ -246,6 +250,7 @@ void habitacion(void )
     }
     while(c1!=1492);
     fclose(pf);
+    return(time(NULL)-now);
 }
 
 void casa(void )
@@ -265,8 +270,9 @@ void oscuridad1(void )
     printf("\n\n\n\n");
 }
 
-void carga(void)
+float carga(void)
 {
+    float vuelta=1;
     delay(1);
     FILE *pf;
     //imprimimos la pantalla de carga
@@ -284,10 +290,40 @@ void carga(void)
         scanf("%c", &a);
         if(a=='3')
         {
+            char  b = 0;
             //imprimimos las opciones que tenemos en ajustes
-            pf=fopen("Proyecto/ajustes.txt","r");
+            pf=fopen("Proyecto/opciones.txt","r");
             imprime(pf,0);
-            getch();
+            while((b!='1')&&(b!='2')&&(b!='3')&&(b!='9'))scanf(" %c", &b);
+            if(b=='1')
+            {
+                //si el usuario escoge ajustar la pantalla se mostraran los margenes a los que ajustar la pantalla
+                pf=fopen("Proyecto/ajustes.txt","r");
+                imprime(pf,0);
+                getch();
+            }
+            if(b=='2')
+            {
+                FILE *pf1;
+                pf1=fopen("Proyecto/Highscore.txt","r");
+                imprime(pf1,0);
+                //Esta funcion enseña al jugador la lista de puntuacion obtenida en veces anteriores, al igual que la dificultad;
+                fclose(pf1);
+                getch();
+
+            }
+            if(b=='3')
+            {
+                //mostramos al usuario que dificultades puede elegir y dependiendo de la que escoja la variable tomara un valor u otro
+                pf=fopen("Proyecto/dificultades.txt", "r");
+                imprime(pf,0);
+                char c;
+                while((c!='1')&&(c!='2')&&(c!='3')&&(c!='4')) scanf(" %c", &c);
+                if(c=='1')vuelta=1;
+                if(c=='2')vuelta=1.2;
+                if(c=='3')vuelta=1.4;
+                if(c=='4')vuelta=1.5;
+            }
         }
         if(a=='2')
         {
@@ -302,6 +338,7 @@ void carga(void)
                 if(practica=='2')ice_cave();
                 if(practica=='4')candado();
                 if(practica=='3')habitacion();
+                if(practica=='5')enigmas();
                 delay(1);
             }
             while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
@@ -310,6 +347,7 @@ void carga(void)
     while(a!='1');
     fclose(pf);
     delay(1);
+    return vuelta;
 }
 void imprime(FILE *pf,int solucion)
 {
@@ -327,4 +365,334 @@ void imprime(FILE *pf,int solucion)
         else if(foto=='&') printf("%i", (solucion%10));
         else printf("%c",foto);
     }
+}
+void highscore(char nick[],int diff,float score)
+{
+    //esta funcion deja añade al fichero de resultados los resultados obtenidos
+    char dificultad[20];
+    if(diff==10)strcpy(dificultad,"Facil");
+    if(diff==12)strcpy(dificultad,"Normal");
+    if(diff==14)strcpy(dificultad,"Dificil");
+    if(diff==15)strcpy(dificultad,"Muy Dificil");
+    FILE *pf;
+    pf=fopen("Proyecto/Highscore.txt","a");
+    fprintf(pf,"%s \t\t %s \t\t %f\n",nick, dificultad, score);
+    fclose(pf);
+}
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+void imprime1(FILE *pf,int solucion);
+int enigmas()
+{
+
+    char elige,elige1,e='1';
+    int n,cod=501,cod1;
+    int resp2=2,resp3=4,resp4[2]={40,96};
+    char resp1[7]="9/9+99",resp0[7]="99+9/9",res1[7],resp6[7]="etsidi",res6[7];
+    char re[2];
+    char ans[7],ans1[8],a[7],a1[8];
+    FILE *p1;
+    FILE *p2;
+    FILE *p3;
+    FILE *p4;
+    FILE *mat;
+    FILE *puerta;
+    FILE *puerta2;
+    FILE *mesa;
+    FILE *pistas;
+    FILE *letras;
+    FILE *suma;
+    FILE *peluche;
+    int res2,res3,res4,ptos,ptos1;
+    strcpy(ans, "Andres");
+    strcpy(ans1,"Iniesta");
+
+
+    puerta = fopen("Proyecto/3puertas.txt", "r");
+    imprime1 (puerta,0);
+    fclose(puerta);
+    printf ("Entras?:\t1.si\t2.No\n\n\t");
+    do{
+    scanf(" %c",&elige);
+    if (elige!='1'&& elige!='2')
+    {
+        printf ("\n\nElige nuevamente\n\n\t\t");
+    }
+     }while (elige!='1'&& elige!='2');
+
+
+
+    switch (elige)
+    {
+    case '1':
+        {
+        do{
+          n=0;
+          ptos=0;
+          printf("\n\n\n\n\n\n\n\n\n");
+          mat = fopen("Proyecto/matematica.txt", "r");
+          imprime1(mat,0);
+          fclose(mat);
+              delay(3);
+              printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              p1 = fopen("Proyecto/prueba1.txt", "r");
+              imprime1(p1,0);
+              fclose(p1);
+              printf("\n\n\n\n\n\n\n\n\n\n\tResponde:");
+              scanf ("%s",res1);
+              if (strcmp(resp1, res1) == 0|| strcmp(resp0, res1) == 0)
+              {
+                  printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n\n\n\n");
+                  ptos++;
+              }
+              else
+              {
+                  printf ("\n\n\tRESPUESTA INCORRECTA\n\n\n\n\n");
+              }
+              n++;
+            delay(3);
+
+
+              printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              p2 = fopen("Proyecto/prueba2.txt", "r");
+                imprime1(p2,0);
+                fclose(p2);
+                printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\tResponde:");
+                scanf ("%i",&res2);
+                if(res2==resp2)
+                {
+                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n\n\n\n");
+                   ptos++;
+                }
+                else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA...\n\n\n\n\n");
+                }
+                n++;
+                delay(3);
+
+
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n");
+            p3 = fopen("Proyecto/prueba3.txt", "r");
+            imprime1(p3,0);
+            fclose(p3);
+            printf("\n\n\n\n\n\n\n\tResponde:");
+            scanf ("%i",&res3);
+                if(res3==resp3)
+                {
+                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
+                   ptos++;
+                }
+                else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA...\n\n");
+                }
+                n++;
+                delay(3);
+
+              printf("\n\n\n\n\n\n\n\n\n");
+              p4 = fopen("Proyecto/prueba4.txt", "r");
+            imprime1(p4,0);
+            fclose(p4);
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\tResponde:");
+            scanf ("%i",&res4);
+                if(res4==resp4[0]||res4==resp4[1])
+                {
+                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
+                   ptos++;
+                }
+                else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA..\n\n");
+                }
+                n++;
+                delay(2);
+                if(ptos>=2)
+                {
+                    printf("\n\n\tFELICIDADES LOGRASTE COMPLETAR 3 ACERTIJOS!!!\n\n");
+                    printf("\tPASAS A LA SIGUIENTE PRUEBA\n");
+                }
+                else
+                {
+                    printf("\n\n\tNO LOGRASTE COMPLETAR TODOS LOS ACERTIJOS!!!\n\n");
+                    printf("\tTENDRAS QUE VOLVER A EMPEZAR\n");
+                }
+                delay(3);
+
+        }while (n<=2||ptos<=2);
+
+        }
+    break;
+        printf ("\n\nSales de la habitacion....\n\n\n");
+
+    case '2':
+        {
+        exit(-1);
+        }
+        break;
+    }
+    printf("\n\n\n\n\n\n\n"); //////!!!!!
+
+    puerta2 = fopen("Proyecto/puerta2.txt", "r");
+    imprime1 (puerta2,0);
+    fclose(puerta2);
+    do{
+    scanf(" %c",&elige1);
+    if (elige1!='1'&& elige1!='2')
+    {
+        printf ("\n\nElige nuevamente\n\n\t\t");
+    }
+     }while (elige1!='1'&& elige1!='2');
+
+     switch (elige1)
+    {
+    case '1':
+        {
+        do{
+
+          ptos1=0;
+          printf("\n\n\n\n\n\n\n\n\n\n\n");
+          mesa = fopen("Proyecto/mesa.txt", "r");
+          imprime1(mesa,0);
+          fclose(mesa);
+          delay(3);
+
+
+              printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              suma = fopen("Proyecto/suma_encriptada.txt", "r");
+              imprime1(suma,0);
+              fclose(suma);
+              printf ("\n\n\t\tElige cual de las 3 opciones es la correcta...\n\n\n\n\n\n");
+              printf("\n\n\n\n\n\n\tResponde:");
+              scanf ("%s",re);
+              if (re[0]== 'a'||re[0]=='A')
+              {
+                  printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
+                  ptos1++;
+              }
+              else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA\n\n");
+                }
+            delay(2);
+
+              printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              letras = fopen("Proyecto/letras.txt", "r");
+                imprime1(letras,0);
+                fclose(letras);
+                printf("\n\n\n\n\n\n\tResponde:");
+                scanf ("%s",res6);
+                if(strcmp(resp6, res6) == 0)
+                {
+                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
+                   ptos1++;
+                }
+                else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA\n\n");
+                }
+
+            delay(2);
+
+              printf("\n\n\n\n\n\n\n\n\n\n\n");
+              pistas = fopen("Proyecto/pistas.txt", "r");
+            imprime1(pistas,0);
+            fclose(pistas);
+            printf("\n\n\n\n\n\n\tResponde:");
+            scanf ("%s",a);
+            scanf ("%s",a1);
+                if((strcmp(a,ans) == 0) ||(strcmp(a1,ans1) == 0) )
+                {
+                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
+                   ptos1++;
+                }
+                else
+                {
+                    printf ("\n\n\tRESPUESTA INCORRECTA\n\n");
+                }
+
+            delay(2);
+
+                if(ptos1>=2)
+                {
+                    printf("\n\n\tFELICIDADES LOGRASTE COMPLETAR TODOS LOS ENIGMAS!!!\n\n");
+                    printf("\tPASAS A LA SIGUIENTE PRUEBA\n");
+                }
+                else
+                {
+                    printf("\n\n\tNO LOGRASTE COMPLETAR TODOS LOS ENIGMAS!!!\n\n");
+                    printf("\tTENDRAS QUE VOLVER A EMPEZAR\n");
+                }
+        }while(ptos1<=2);
+        }
+    break;
+        printf ("\n\nSales de la habitacion....\n\n\n");
+
+    case '2':
+        {
+        exit(-1);
+        }
+        break;
+    }
+        printf("\n\n\n\n\n\n\n\n");
+        delay(3);
+        do{
+         if(e=='1')
+         {
+         peluche =fopen("Proyecto/luz.txt","r");
+         imprime1(peluche,0);
+         fclose(peluche);
+         delay(5);
+         printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+         printf("\n\n\t..Necesitas ver de nuevo?...\n\n1.si\n\n2.no\n\n\n\n\n\n\n\t\t");
+         e=0;
+         }
+         scanf(" %c",&e);
+         if (e!='1'&& e!='2')
+            {
+        printf ("\n\n\tElige nuevamente\n\n\n\n\n\n\n");
+            }
+
+        }while (e!='2');
+
+        printf("\n\n\n\n\n\n");
+        do{
+        printf ("\n\n\tDigita el codigo oculto....\n\n");
+        scanf("%i",&cod1);
+        if (cod1==cod)
+        {
+            printf ("\n\n\tFELICIDADES HAS CONSEGUIDO PASAR A LA SIGUIENTE PRUEBA!!!");
+        }
+        else
+            printf ("\n\n\tERROR!!! CODIGO INCORRECTO...");
+        }while(cod1!=cod);
+ return 0;
+
+
+}
+
+void imprime1(FILE *pf,int solucion)
+{
+    //la funciojn imprime muestra en pantalla el contenido de un fichero que le haya sido dado.
+    char foto;
+    while(fscanf(pf, "%c",&foto) !=EOF )
+    {
+    printf("%c",foto);
+    }
+    printf("\n");
+    fclose(pf);
 }
