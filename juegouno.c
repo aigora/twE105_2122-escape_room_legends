@@ -439,7 +439,7 @@ int enigmas1()
                 scanf (" %c",&res1);//Funcion scanf para almacenar la respuesta del jugador
                     if (res1!='1'&&res1!='2'&&res1!='3'&&res1!='4')
                         {
-                            printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t\t");
+                            printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
                         }
                 }while(res1!='1'&&res1!='2'&&res1!='3'&&res1!='4');
               if (res1=='3')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
@@ -463,7 +463,7 @@ int enigmas1()
                 scanf (" %c",&res2);//Funcion scanf para almacenar la respuesta del jugador
                     if (res2!='1'&&res2!='2'&&res2!='3'&&res2!='4')
                         {
-                            printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t\t");
+                            printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
                         }
                 }while(res2!='1'&&res2!='2'&&res2!='3'&&res2!='4');
                 if(res2=='3')
@@ -487,7 +487,7 @@ int enigmas1()
                 scanf (" %c",&res3);//Funcion scanf para almacenar la respuesta del jugador
                     if (res3!='1'&&res3!='2'&&res3!='3'&&res3!='4')
                         {
-                            printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t\t");
+                            printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
                         }
                 }while(res3!='1'&&res3!='2'&&res3!='3'&&res3!='4');
 
@@ -511,7 +511,7 @@ int enigmas1()
             scanf (" %c",&res4);//Funcion scanf para almacenar la respuesta del jugador
                 if (res4!='1'&&res4!='2'&&res4!='3'&&res4!='4')
                     {
-                        printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t\t");
+                        printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
                     }
             }while(res4!='1'&&res4!='2'&&res4!='3'&&res4!='4');
 
@@ -549,7 +549,7 @@ int enigmas1()
     scanf(" %c",&elige1);
     if (elige1!='1')
     {
-        printf ("\n\nEleccion incorrecta!!\n\nElige nuevamente\n\n\t\t");
+        printf ("\n\nEleccion invalida!!\n\nElige nuevamente\n\n\t\t");
     }
      }while (elige1!='1');//Bucle para volver a elegir una opcion correcta
 
@@ -573,7 +573,7 @@ int enigmas1()
                 scanf (" %c",&re);//Funcion scanf para almacenar la respuesta del jugador
                     if (re!='1'&&re!='2'&&re!='3')
                         {
-                            printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t\t");
+                            printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
                         }
                 }while(re!='1'&&re!='2'&&re!='3');
               if (re== '1')
@@ -614,7 +614,7 @@ int enigmas1()
                 scanf (" %c",&a1);//Funcion scanf para almacenar la respuesta del jugador
                     if (a1!='1'&&a1!='2'&&a1!='3'&&a1!='1'&&a1!='2'&&a1!='3')
                         {
-                            printf ("\n\n\tEleccion incorrecta!!\tElige nuevamente\n\n\t");
+                            printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t");
                         }
                 }while(a1!='1'&&a1!='2'&&a1!='3'&&a1!='1'&&a1!='2'&&a1!='3');
                 if(a1=='3')
