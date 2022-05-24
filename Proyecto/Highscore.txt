@@ -1,0 +1,7 @@
+
+
+Nombre:          Dificultad:          Puntuacion:
+
+paco 		 Muy Dificil 		 990.000000
+
+Pedro 		  		 1104.399902

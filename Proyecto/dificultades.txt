@@ -1,0 +1,29 @@
+1.facil
+
+
+
+2.normal
+
+
+
+3.dificil
+
+
+
+4.muy dificil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+introduce el numero correspondiente a la dificultad con la que quieres jugar.
+(la dificulatd no cambia las pruebas, solo el modo de puntuacion)

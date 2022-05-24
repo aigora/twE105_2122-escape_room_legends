@@ -6,11 +6,12 @@
 	<stdlib.h>
 	<time.h>
 
-1652546843 source:c:\users\usuario\documents\github\twe105_2122-escape_room_legends\main.c
+1653409513 source:c:\users\usuario\documents\github\twe105_2122-escape_room_legends\main.c
 	"juegouno.h"
 	"adddelay.h"
+	"enigmas.h"
 
-1652543595 c:\users\usuario\documents\github\twe105_2122-escape_room_legends\juegouno.h
+1653408814 c:\users\usuario\documents\github\twe105_2122-escape_room_legends\juegouno.h
 	<stdio.h>
 	<string.h>
 	<conio.h>
@@ -39,9 +40,10 @@
 	"juegouno.h"
 	"adddelay.h"
 
-1652546568 source:c:\users\usuario\documents\github\twe105_2122-escape_room_legends\juegouno.c
+1653408892 source:c:\users\usuario\documents\github\twe105_2122-escape_room_legends\juegouno.c
 	"juegouno.h"
 	"adddelay.h"
+	"enigmas.h"
 
 1652129254 source:c:\users\pista\documents\github\github2\twe105_2122-escape_room_legends\adddelay.c
 	"adddelay.h"
@@ -100,4 +102,18 @@
 	"adddelay.h"
 
 1653320215 source:d:\informatica 1\fundamentos\tema2\twe105_2122-escape_room_legends\prueba_ele.c
+
+1653384354 c:\users\usuario\documents\github\twe105_2122-escape_room_legends\enigma.h
+
+1653384894 source:c:\users\usuario\documents\github\twe105_2122-escape_room_legends\enigmas.c
+	"enigmas.h"
+	"juegouno.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"adddelay.h"
+
+1653384894 c:\users\usuario\documents\github\twe105_2122-escape_room_legends\enigmas.h
+	<stdio.h>
 

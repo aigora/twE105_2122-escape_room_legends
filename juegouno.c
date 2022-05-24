@@ -1,6 +1,6 @@
 #include "juegouno.h"
 #include "adddelay.h"
-
+#include "enigmas.h"
 typedef struct
 {
     char nombre[20];
@@ -31,8 +31,9 @@ void imprimefn(char *pf,int x,int y,int xmax,int xmin,int ymax,int ymin,int N)
         }
     }
 }
-void ice_cave()
+int ice_cave()
 {
+    time_t now= time(NULL);
     FILE *pf;
     char imagen[12][12],*matrix;
     //cargamos el mapa en una matriz de carateres
@@ -78,9 +79,11 @@ void ice_cave()
     while(x!=2||y!=9);
     imprimefn(matrix,2,10,12,0,12,0,12);
     delay(0.5);
+    return(time(NULL)-now);
 }
-void candado()
+int candado()
 {
+    time_t now=time(NULL);
     //creamos las variables en las que almacenamos la contraseña que introduce el usuario y las que usarimos para indicar si esta bien el numero o no ;
     char respuesta[3];
     char cent='~',dec='~',un='~';
@@ -121,11 +124,11 @@ void candado()
     pf=fopen("Proyecto/candado_abierto.txt", "r");
     imprime(pf,0);
     fclose(pf);
-    //delay(2);
-    //laberinto();
+    return(time(NULL)-now);
 }
-void laberinto()
+int laberinto()
 {
+    time_t now=time(NULL);
     FILE *pf;
     //imprimimos las instrucciones de la prueba
     pf=fopen("Proyecto/texto_laberinto.txt", "r");
@@ -177,9 +180,11 @@ void laberinto()
     //si las coordenadas del jugador coinciden con el caracter '/'que es el que indica el fin del mapa terminamos el bucle
     while(imagen[x][y]!='/');
     delay(1);
+    return(time(NULL)-now);
 }
-void habitacion(void )
+int habitacion(void )
 {
+    time_t now=time(NULL);
     FILE *pf;
     char respuesta1;
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ... Entras en una nueva habitacion iluminada ...\n\n");
@@ -193,7 +198,7 @@ void habitacion(void )
         scanf("%c",&respuesta1);
         if((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//estas lineas guardan un imput de parte del usuario, y se aseguran de
             while((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//limitar los posibles imputs que se pueden introducir
-        scanf("%c",&respuesta1);
+                scanf("%c",&respuesta1);
 
         if(respuesta1=='2') //La opcion 2 corresponde a la opcion Estanteria
         {
@@ -217,8 +222,8 @@ void habitacion(void )
             imprime(pf,0); //Se manda a imprimir la puerta en la funcion imprime
             scanf("%c",&respuesta2);
             if((respuesta2!='1')&&(respuesta2!='2')) //Se introducen unas lineas que tienen la funcion de guardar la respuesta
-            while((respuesta2!='1')&&(respuesta2!='2'))//del usuario, a la vez de asegurarse de que son los esperados.
-            scanf("%c",&respuesta2);
+                while((respuesta2!='1')&&(respuesta2!='2'))//del usuario, a la vez de asegurarse de que son los esperados.
+                    scanf("%c",&respuesta2);
             if(respuesta2=='1')
             {
                 do
@@ -246,6 +251,7 @@ void habitacion(void )
     }
     while(c1!=1492);
     fclose(pf);
+    return(time(NULL)-now);
 }
 
 void casa(void )
@@ -265,8 +271,9 @@ void oscuridad1(void )
     printf("\n\n\n\n");
 }
 
-void carga(void)
+float carga(void)
 {
+    float vuelta=1;
     delay(1);
     FILE *pf;
     //imprimimos la pantalla de carga
@@ -284,10 +291,40 @@ void carga(void)
         scanf("%c", &a);
         if(a=='3')
         {
+            char  b = 0;
             //imprimimos las opciones que tenemos en ajustes
-            pf=fopen("Proyecto/ajustes.txt","r");
+            pf=fopen("Proyecto/opciones.txt","r");
             imprime(pf,0);
-            getch();
+            while((b!='1')&&(b!='2')&&(b!='3')&&(b!='9'))scanf(" %c", &b);
+            if(b=='1')
+            {
+                //si el usuario escoge ajustar la pantalla se mostraran los margenes a los que ajustar la pantalla
+                pf=fopen("Proyecto/ajustes.txt","r");
+                imprime(pf,0);
+                getch();
+            }
+            if(b=='2')
+            {
+                FILE *pf1;
+                pf1=fopen("Proyecto/Highscore.txt","r");
+                imprime(pf1,0);
+                //Esta funcion enseña al jugador la lista de puntuacion obtenida en veces anteriores, al igual que la dificultad;
+                fclose(pf1);
+                getch();
+
+            }
+            if(b=='3')
+            {
+                //mostramos al usuario que dificultades puede elegir y dependiendo de la que escoja la variable tomara un valor u otro
+                pf=fopen("Proyecto/dificultades.txt", "r");
+                imprime(pf,0);
+                char c;
+                while((c!='1')&&(c!='2')&&(c!='3')&&(c!='4')) scanf(" %c", &c);
+                if(c=='1')vuelta=1;
+                if(c=='2')vuelta=1.2;
+                if(c=='3')vuelta=1.4;
+                if(c=='4')vuelta=1.5;
+            }
         }
         if(a=='2')
         {
@@ -302,6 +339,7 @@ void carga(void)
                 if(practica=='2')ice_cave();
                 if(practica=='4')candado();
                 if(practica=='3')habitacion();
+                if(practica=='5')enigmas();
                 delay(1);
             }
             while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
@@ -310,6 +348,7 @@ void carga(void)
     while(a!='1');
     fclose(pf);
     delay(1);
+    return vuelta;
 }
 void imprime(FILE *pf,int solucion)
 {
@@ -327,4 +366,17 @@ void imprime(FILE *pf,int solucion)
         else if(foto=='&') printf("%i", (solucion%10));
         else printf("%c",foto);
     }
+}
+void highscore(char nick[],int diff,float score)
+{
+    printf("%i",diff);
+    char dificultad[20];
+    if(diff==10)strcpy(dificultad,"Facil");
+    if(diff==12)strcpy(dificultad,"Normal");
+    if(diff==14)strcpy(dificultad,"Dificil");
+    if(diff==15)strcpy(dificultad,"Muy Dificil");
+    FILE *pf;
+    pf=fopen("Proyecto/Highscore.txt","a");
+    fprintf(pf,"%s \t\t %s \t\t %f\n",nick, dificultad, score);
+    fclose(pf);
 }
