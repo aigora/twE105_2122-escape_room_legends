@@ -13,7 +13,7 @@ int enigmas()
     char elige,elige1,e='1';
     int n,cod=501,cod1;
     int resp2=2,resp3=4,resp4[2]={40,96};
-    char resp1[7]="9/9+99",res1[7],resp6[7]="etsidi",res6[7];
+    char resp1[7]="9/9+99",resp0[7]="99+9/9",res1[7],resp6[7]="etsidi",res6[7];
     char re[2];
     char ans[7],ans1[8],a[7],a1[8];
     FILE *p1;
@@ -65,7 +65,7 @@ int enigmas()
               fclose(p1);
               printf("\n\n\n\n\n\n\n\n\n\n\tResponde:");
               scanf ("%s",res1);
-              if (strcmp(resp1, res1) == 0)
+              if (strcmp(resp1, res1) == 0|| strcmp(resp0, res1) == 0)
               {
                   printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n\n\n\n");
                   ptos++;
