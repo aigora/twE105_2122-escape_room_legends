@@ -188,10 +188,11 @@ int enigmas()
               imprime1(suma,0);
               fclose(suma);
               printf ("\n\n\t\tElige cual de las 3 opciones es la correcta...\n\n\n\n\n\n");
+              printf("\n\n\n\n\n\n\tResponde:");
               scanf ("%s",re);
               if (re[0]== 'a'||re[0]=='A')
               {
-                  printf ("\n\n\tESPUESTA CORRECTA!!!\n\n");
+                  printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
                   ptos1++;
               }
               else
@@ -204,6 +205,7 @@ int enigmas()
               letras = fopen("Proyecto/letras.txt", "r");
                 imprime1(letras,0);
                 fclose(letras);
+                printf("\n\n\n\n\n\n\tResponde:");
                 scanf ("%s",res6);
                 if(strcmp(resp6, res6) == 0)
                 {
@@ -221,6 +223,7 @@ int enigmas()
               pistas = fopen("Proyecto/pistas.txt", "r");
             imprime1(pistas,0);
             fclose(pistas);
+            printf("\n\n\n\n\n\n\tResponde:");
             scanf ("%s",a);
             scanf ("%s",a1);
                 if((strcmp(a,ans) == 0) ||(strcmp(a1,ans1) == 0) )
@@ -283,7 +286,7 @@ int enigmas()
         scanf("%i",&cod1);
         if (cod1==cod)
         {
-            printf ("\n\n\tFELICIDADES HAS CONSEGUIDO PASAR A LA SIGUIENTE PRUEBA....");
+            printf ("\n\n\tFELICIDADES HAS CONSEGUIDO PASAR A LA SIGUIENTE PRUEBA!!!");
         }
         else
             printf ("\n\n\tERROR!!! CODIGO INCORRECTO...");
