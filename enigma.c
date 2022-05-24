@@ -245,7 +245,6 @@ int enigmas()
                     printf("\n\n\tNO LOGRASTE COMPLETAR TODOS LOS ENIGMAS!!!\n\n");
                     printf("\tTENDRAS QUE VOLVER A EMPEZAR\n");
                 }
-                delay(3);
         }while(ptos1<=2);
         }
     break;
