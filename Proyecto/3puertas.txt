@@ -1,4 +1,4 @@
-     Entras y ves 2 puertas....
+     Entras y ves la primera puerta....
 
      __________________________ 
     |           	       |	 INSTRUCCIONES:
@@ -10,7 +10,7 @@
     |         HABITACION       |        - Si respondes menos de 3 acertijos entonces el juego
     |        DE LAS CAJAS      |        se reiniciara hasta que logres conseguirlos.
     |                          |	
-    |                          |
+    |                          |			¡¡¡¡BUENA SUERTE!!!!
     |                      (O) |
     |                          |
     |                          |
