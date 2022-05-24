@@ -9,7 +9,7 @@ Te encuentras con la siguiente puerta...
     |                          |	-Si no logras resolver todos los enigmas entonces
     |        HABITACION        |	El juego se reiniciara hasta que lo consigas.
     |      DE LOS ENIGMAS      |
-    |                          |			¡¡¡BUENA SUERTE!!!
+    |                          |			   BUENA SUERTE!!!
     |                          |
     |                      (O) |
     |                          |

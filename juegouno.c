@@ -411,7 +411,7 @@ int enigmas1()
     //Contadores
     int ptos,ptos1;
     printf("\n\n\n\n");
-    puerta = fopen("Proyecto/3puertas.txt", "r");//Apertura e impresion del fichero que contiene la primera puerta
+    puerta = fopen("Proyecto/puerta1.txt", "r");//Apertura e impresion del fichero que contiene la primera puerta
     imprime1 (puerta,0);
     fclose(puerta);
     printf ("Entras?:\t1.si\n\n\t");
