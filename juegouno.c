@@ -344,7 +344,7 @@ float carga(void)
                 if(practica=='5')enigmas1();
                 delay(1);
             }
-            while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='9'));
+            while((practica!='1')&&(practica!='2')&&(practica!='3')&&(practica!='4')&&(practica!='5')&&(practica!='9'));
         }
     }
     while(a!='1');
@@ -387,6 +387,7 @@ void highscore(char nick[],int diff,float score)
 
 int enigmas1()
 {
+    time_t now=time(NULL);
     //Variables para las respuestas a las preguntas de tipo si/no.
     char elige,elige1,e='1';
     //Variables que almacenan las respuestas correctas
@@ -674,9 +675,7 @@ int enigmas1()
                             printf ("\n\n\tERROR!!! CODIGO INCORRECTO...");
               }while(cod1!=cod);//Bucle que se repite hasta que el jugador digite el codigo correcto
             delay(3);
- return 0;
-
-
+ return time(NULL)-now;
 }
 
 void imprime1(FILE *pf,int solucion)

@@ -1,5 +1,4 @@
 
-                                         
                                                ELIGE TU DIFICULTAD:
                                          ____________________________________
                                         /                                    \
@@ -25,17 +24,6 @@
                                        \                                      /
                                         \____________________________________/
 
-
-
-
-
-
-
-
-
-
-
-
-
 introduce el numero correspondiente a la dificultad con la que quieres jugar.
 (la dificulatd no cambia las pruebas, solo el modo de puntuacion)
+

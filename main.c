@@ -3,6 +3,7 @@
 int main()
 {
 char usuario[20];
+//enigmas1();
 /*ejecutamos el menu principal , si el usuario no cambia la dificultad esta sera facil
  la variable dificultad lo que haces es que cuanto mayor dificultad haya menos puntos recibe el usuario por prueba*/
 float dificultad=carga();
