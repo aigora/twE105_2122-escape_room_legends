@@ -14,4 +14,4 @@ Gonzalo Stampa Garcia, gonzalosta
 
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+Hacer un escape room en la cual se puedan practicar varias pruebas, o bien jugar una partida completa. 
