@@ -1,7 +1,7 @@
 Te encuentras con la siguiente puerta...
 
      __________________________  
-    |           	       |	INSTRUCCIONES:
+    |           	             |	INSTRUCCIONES:
     |                          |	-Al entrar encontraras una mesa con 3 sobres
     |                          |        cada uno con un enigma diferente.
     |                          |	-Para pasar a la siguiente prueba tendras que 
