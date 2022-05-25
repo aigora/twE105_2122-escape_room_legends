@@ -20,7 +20,7 @@ para abrir el candado  tendras que adivinar una clave de tres digitos
 บบ
 debajo del candado apareceran 3 testigos.
 บบ
-el primer testigo corresponde al primer digito introduciod, el 2* al 2* y el 3* al 3*
+el primer testigo corresponde al primer digito introducido, el 2ndo al 2ndo y el 3ro al 3ro
 บบบ
 si el digito es correcto su correspondiente testigo mostrara'**'
 บบบ

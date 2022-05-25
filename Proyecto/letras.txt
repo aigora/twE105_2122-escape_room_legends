@@ -2,9 +2,9 @@
 	oculta escrita con los simbolos de abajo...
 	Ejemplo: 
 	----		----
-	|*.. = q	|%.. = x
+	|*.. = Q	|%.. = X
 	----
-	OJO!!! Con las mayusculas y minusculas, fijese bien en el ejemplo.
+	
 		     *               %
 		ABE|OKJ|PIN	ACD|RGJ|PNL
 		-----------	-----------

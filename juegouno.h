@@ -16,5 +16,6 @@ int ice_cave(void);
 float carga(void);
 void highscore(char nick[],int diff,float score);
 int enigmas1(void);
+void fin(float , float);
 
 #endif // JUEGOUNO_H_INCLUDED

@@ -24,4 +24,4 @@
                                     /__________________________________________\
                                    
 
-					INTRODUCE EL NUMERO DE LA OPCION QUE QUIERES LLEVAR ACABO:
+			     INTRODUCE EL NUMERO DE LA OPCION QUE QUIERES LLEVAR ACABO:

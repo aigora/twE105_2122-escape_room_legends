@@ -183,6 +183,7 @@ int laberinto()
     while(imagen[x][y]!='/');
     delay(1);
     return(time(NULL)-now);
+    delay(2);
 }
 int habitacion(void )
 {
@@ -195,7 +196,7 @@ int habitacion(void )
     do
     {
         printf("\n\n\n\n");
-        pf = fopen("Proyecto/Imagen Estaneria Mapa Puerta Cerrada.txt", "r"); //Este programa abre un fichero en el cual se encuentra un dibujo con caracteres ASCII
+        pf = fopen("Proyecto/Imagen_Estaneria_Mapa_Puerta_Cerrada.txt", "r"); //Este programa abre un fichero en el cual se encuentra un dibujo con caracteres ASCII
         imprime(pf,0); //esta linea hace que se imprima el fichero mediante una funcion, la cual se ejecutará en otra parte.
         scanf("%c",&respuesta1);
         if((respuesta1!='1')&&(respuesta1!='2')&&(respuesta1!='3'))//estas lineas guardan un imput de parte del usuario, y se aseguran de
@@ -230,7 +231,7 @@ int habitacion(void )
             {
                 do
                 {
-                    pf = fopen("Proyecto/Puerta Candado Cerrado.txt", "r"); //Se abre un fichero con la imagen de la puerta y un candado cerrado
+                    pf = fopen("Proyecto/Puerta_Candado_Cerrado.txt", "r"); //Se abre un fichero con la imagen de la puerta y un candado cerrado
                     imprime(pf,c1); //Se manda a imprimir el fichero en la funcion imprime
                     char numeropalabra[5]="0000"; //se crea un string que absorbe 5 caracteres
                     scanf(" %s",numeropalabra);
@@ -239,14 +240,14 @@ int habitacion(void )
                 while((c1!=1492)&&(c1!=1800));
                 if(c1==1492)
                 {
-                    pf = fopen("Proyecto/Puerta Candado Abierto.txt", "r"); //Si resuelves el candado, se abre un nuevo fichero que contiene una imagen del candado abierto
+                    pf = fopen("Proyecto/Puerta_Candado_Abierto.txt", "r"); //Si resuelves el candado, se abre un nuevo fichero que contiene una imagen del candado abierto
                     imprime(pf,c1);
                 }
             }
         }
         if(respuesta1 == '3') //En el caso de la opcion 3, apareceran en la pantalla una animacion con diferentes mapas de España
         {
-            pf = fopen("Proyecto/Mapa Espana.txt", "r");
+            pf = fopen("Proyecto/Mapa_Espana.txt", "r");
             imprime(pf,0);
             delay(1);
         }
@@ -259,7 +260,7 @@ int habitacion(void )
 void casa(void )
 {
     FILE *pf;
-    pf = fopen("Proyecto/Puerta Entrada.txt", "r"); //Esta funcion imprime una imagen guardada en un fichero, que se imprimira mediante la funcion imprime
+    pf = fopen("Proyecto/Puerta_Entrada.txt", "r"); //Esta funcion imprime una imagen guardada en un fichero, que se imprimira mediante la funcion imprime
     imprime(pf,0);
     fclose(pf);
 }
@@ -288,7 +289,7 @@ float carga(void)
     do
     {
         //imprimimos el menu inicial
-        pf=fopen("Proyecto/pantalla inicial.txt", "r");
+        pf=fopen("Proyecto/pantalla_inicial.txt", "r");
         imprime(pf,0);
         scanf("%c", &a);
         if(a=='3')
@@ -379,7 +380,7 @@ void highscore(char nick[],int diff,float score)
     if(diff==15)strcpy(dificultad,"Muy Dificil");
     FILE *pf;
     pf=fopen("Proyecto/Highscore.txt","a");
-    fprintf(pf,"%s \t\t %s \t\t %f\n",nick, dificultad, score);
+    fprintf(pf,"%s \t\t %s \t\t %.2f\n",nick, dificultad, score);
     fclose(pf);
 }
 
@@ -389,7 +390,7 @@ int enigmas1()
 {
     time_t now=time(NULL);
     //Variables para las respuestas a las preguntas de tipo si/no.
-    char elige,elige1,e='1';
+    char elige,elige1;
     //Variables que almacenan las respuestas correctas
     int cod=501;
     char resp6[7]="etsidi",resp7[7]="ETSIDI",resp8[7]="Etsidi",res6[7];
@@ -644,35 +645,19 @@ int enigmas1()
 
 
                 printf("\n\n\n\n\n\n\n\n");
-            do{
-                    if(e=='1')//sentencia condicional para que se imprima el fichero luz
-                        {
+
                             peluche =fopen("Proyecto/luz.txt","r");//Apertura, impresion y cierre del fichero con la siguiente prueba
                             imprime1(peluche,0);
-                            fclose(peluche);
-                            delay(5);
-                            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                            printf("\n\n\t..Necesitas ver de nuevo?...\n\n1.si\n\n2.no\n\n\n\n\n\n\n\t");//Pregunta al usuario si es necesario ver nuevamente el contenido del fichero
-                            e=0;
-                        }
-                scanf(" %c",&e);//Funcion scanf que almacena la respuesta del jugador para despues ejecutar la sentencia condicional
-                    if (e!='1'&& e!='2')//Sentencia condicional que comprueba si la eleccion del jugador esta dentro de las opciones mostradas
-                        {
-                            printf ("\n\n\tElige nuevamente\n\n\n\n\n\n\n\t");
-                        }
 
-              }while (e!='2');//Bucle que se repite hasta que el jugador elija una opcion valida
-
-                printf("\n\n\n\n\n\n");
             do{
-                printf ("\n\n\tDigita el codigo oculto....\n\n\t");
+                //printf ("\n\n\tDigita el codigo oculto....\n\n\t");
                 scanf("%i",&cod1);//Funcion scanf que almacena la respuesta del jugador para despues ejecutar la sentencia condicional
                     if (cod1==cod)//Sentencia condicional que comprueba si la respuesta del jugador es la correcta.
                         {
                             printf ("\n\n\tFELICIDADES HAS CONSEGUIDO PASAR A LA SIGUIENTE PRUEBA!!!");
                         }
                     else
-                            printf ("\n\n\tERROR!!! CODIGO INCORRECTO...");
+                            printf ("\n\n\tERROR!!! CODIGO INCORRECTO...\n");
               }while(cod1!=cod);//Bucle que se repite hasta que el jugador digite el codigo correcto
             delay(3);
  return time(NULL)-now;
@@ -689,4 +674,14 @@ void imprime1(FILE *pf,int solucion)
     printf("\n");
     fclose(pf);
 }
-
+void fin(float puntuacionf,float diff){
+char usuario[20];
+delay(2);
+FILE *pf;
+int puntuacion=puntuacionf;
+pf=fopen("Proyecto/final.txt","r");
+imprime(pf,puntuacion);
+scanf("%s",usuario);
+highscore(usuario,diff*10,puntuacionf);
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nENHORABUENA %s, HAS COMPLETADO EL JUEGO. YA PUEDES CERRAR EL JUEGO." , usuario);
+}

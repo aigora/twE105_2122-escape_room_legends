@@ -1,10 +1,10 @@
      Entras y ves la primera puerta....
 
      __________________________ 
-    |           	             |	 INSTRUCCIONES:
+    |           	       |	 INSTRUCCIONES:
     |                          |	- Al entrar en la habitacion encontraras una serie de
     |                          |        cajas que se iran abriendo una por una revelando diferentes
-    |            	             |    	acertijos.
+    |            	       |    	acertijos.
     |                          |        - Tendras que resolver por lo menos 3 acertijos para 
     |                          |        pasar a la siguiente prueba.
     |         HABITACION       |        - Si respondes menos de 3 acertijos entonces el juego
