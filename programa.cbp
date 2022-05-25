@@ -35,9 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="adddelay.h" />
-		<Unit filename="enigma.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="juegouno.c">
 			<Option compilerVar="CC" />
 		</Unit>
