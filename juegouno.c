@@ -417,16 +417,16 @@ int enigmas1()
         printf ("Entras?:\t1.si\n\n\t");
             do{
                 scanf(" %c",&elige);
-                    if (elige!='1')
+                    if (elige!='1')//Sentencia condicional para comprobar que el jugador elige una opcion valida
                         {
                             printf ("\n\nRESPUESTA NO VALIDA!!\n\nElige nuevamente\n\n\t\t");
                         }
-              }while (elige!='1');//Bucle para volver a elegir una opcion correcta
+              }while (elige!='1');//Bucle para volver a elegir una opcion valida
 
             do{
                 ptos=0;
                 printf("\n\n\n\n\n\n\n\n\n");
-                mat = fopen("Proyecto/matematica.txt", "r");//apertura e impresion del ficher que contiene 4 cajas y posterior cierre de fichero
+                mat = fopen("Proyecto/matematica.txt", "r");//apertura e impresion del fichero que contiene 4 cajas y posterior cierre de fichero
                 imprime1(mat,0);
                 fclose(mat);
                 delay(3);
@@ -462,13 +462,13 @@ int enigmas1()
                         scanf (" %c",&res2);//Funcion scanf para almacenar la respuesta del jugador
                             if (res2!='1'&&res2!='2'&&res2!='3'&&res2!='4')
                                 {
-                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
+                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");//comprobacion de que la eleccion del jugador esta dentro de las opciones
                                 }
                       }while(res2!='1'&&res2!='2'&&res2!='3'&&res2!='4');
-                    if(res2=='3')
+                    if(res2=='3')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n\n\n\n");
-                        ptos++;
+                        ptos++;//contador de acertijos completados
                       }
                     else
                       {
@@ -478,7 +478,7 @@ int enigmas1()
 
 
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n");
-                p3 = fopen("Proyecto/prueba3.txt", "r");//Apertura, impresion y cierre del fichero con el segundo acertijo
+                p3 = fopen("Proyecto/prueba3.txt", "r");//Apertura, impresion y cierre del fichero con el tercer acertijo
                 imprime1(p3,0);
                 fclose(p3);
                 printf("\n\n\n\n\n\n\n\tResponde:");
@@ -486,14 +486,14 @@ int enigmas1()
                         scanf (" %c",&res3);//Funcion scanf para almacenar la respuesta del jugador
                             if (res3!='1'&&res3!='2'&&res3!='3'&&res3!='4')
                                 {
-                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
+                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");//comprobacion de que la eleccion del jugador esta dentro de las opciones
                                 }
                       }while(res3!='1'&&res3!='2'&&res3!='3'&&res3!='4');
 
-                    if(res3=='2')
+                    if(res3=='2')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
-                        ptos++;
+                        ptos++;//contador de acertijos completados
                       }
                     else
                       {
@@ -502,7 +502,7 @@ int enigmas1()
                 delay(3);
 
                 printf("\n\n\n\n\n\n\n\n\n");
-                p4 = fopen("Proyecto/prueba4.txt", "r");
+                p4 = fopen("Proyecto/prueba4.txt", "r");//Apertura, impresion y cierre del fichero con el cuarto acertijo
                 imprime1(p4,0);
                 fclose(p4);
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\tResponde:");
@@ -510,21 +510,21 @@ int enigmas1()
                         scanf (" %c",&res4);//Funcion scanf para almacenar la respuesta del jugador
                             if (res4!='1'&&res4!='2'&&res4!='3'&&res4!='4')
                                 {
-                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
+                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");//comprobacion de que la eleccion del jugador esta dentro de las opciones
                                 }
                       }while(res4!='1'&&res4!='2'&&res4!='3'&&res4!='4');
 
-                    if(res4=='4')
+                    if(res4=='4')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
-                        ptos++;
+                        ptos++;//contador de acertijos completados
                       }
                     else
                       {
                         printf ("\n\n\tRESPUESTA INCORRECTA..\n\n");
                       }
                 delay(2);
-                    if(ptos>=3)
+                    if(ptos>=3)//Sentencia condicional if que comprueba que el jugador logro completar por lo menos 3 acertijos
                       {
                         printf("\n\n\tFELICIDADES LOGRASTE COMPLETAR 3 ACERTIJOS!!!\n\n");
                         printf("\tPASAS A LA SIGUIENTE PRUEBA\n");
@@ -536,7 +536,7 @@ int enigmas1()
                       }
                 delay(4);
 
-              }while (ptos<=2);
+              }while (ptos<=2);//Bucle que repite el juego si el jugador no ha logrado completar 3 acertijos
 
 
         printf("\n\n\n\n\n\n\n");
@@ -546,7 +546,7 @@ int enigmas1()
         fclose(puerta2);
             do{
                 scanf(" %c",&elige1);
-                    if (elige1!='1')
+                    if (elige1!='1')//Sentencia condicional para comprobar que el jugador elige una opcion valida
                         {
                             printf ("\n\nRESPUESTA NO VALIDA!!\n\nElige nuevamente\n\n\t\t");
                         }
@@ -556,14 +556,14 @@ int enigmas1()
 
                 ptos1=0;
                 printf("\n\n\n\n\n\n\n\n\n\n\n");
-                mesa = fopen("Proyecto/mesa.txt", "r");
+                mesa = fopen("Proyecto/mesa.txt", "r");//apertura e impresion del fichero que contiene 3 sobres y posterior cierre de fichero
                 imprime1(mesa,0);
                 fclose(mesa);
                 delay(3);
 
 
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                suma = fopen("Proyecto/suma_encriptada.txt", "r");
+                suma = fopen("Proyecto/suma_encriptada.txt", "r");//Apertura, impresion y cierre del fichero con el primer enigma
                 imprime1(suma,0);
                 fclose(suma);
                 printf ("\n\n\t\tElige cual de las 3 opciones es la correcta...\n\n\n\n\n\n");
@@ -572,30 +572,30 @@ int enigmas1()
                         scanf (" %c",&re);//Funcion scanf para almacenar la respuesta del jugador
                             if (re!='1'&&re!='2'&&re!='3')
                                 {
-                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");
+                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t\t");//comprobacion de que la eleccion del jugador esta dentro de las opciones
                                 }
-                       }while(re!='1'&&re!='2'&&re!='3');
-                    if (re== '1')
+                       }while(re!='1'&&re!='2'&&re!='3');//Bucle que se repite hasta que el jugador seleccione una opcion valida
+                    if (re== '1')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
-                        ptos1++;
+                        ptos1++;//contador de enigmas completados
                       }
                     else
                       {
                         printf ("\n\n\tRESPUESTA INCORRECTA\n\n");
                       }
-                delay(2);
+                delay(2);//funcion similar a sleep que crea un tiempo de retardo antes de ejecutar la siguiente accion.
 
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                letras = fopen("Proyecto/letras.txt", "r");
+                letras = fopen("Proyecto/letras.txt", "r");//Apertura, impresion y cierre del fichero con el segundo enigma
                 imprime1(letras,0);
                 fclose(letras);
                 printf("\n\n\n\n\n\n\tResponde:");
-                scanf ("%s",res6);
-                    if(strcmp(resp6, res6) == 0||strcmp(resp7, res6) == 0||strcmp(resp8, res6) == 0)
+                scanf ("%s",res6);//Funcion scanf para almacenar la respuesta del jugador en una cadena de caracteres
+                    if(strcmp(resp6, res6) == 0||strcmp(resp7, res6) == 0||strcmp(resp8, res6) == 0)//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
-                        ptos1++;
+                        ptos1++;//contador de enigmas completados
                       }
                     else
                     {
@@ -605,7 +605,7 @@ int enigmas1()
                 delay(2);
 
                 printf("\n\n\n\n\n\n\n\n\n\n\n");
-                pistas = fopen("Proyecto/pistas.txt", "r");
+                pistas = fopen("Proyecto/pistas.txt", "r");//Apertura, impresion y cierre del fichero con el tercer enigma
                 imprime1(pistas,0);
                 fclose(pistas);
                 printf("\n\n\tResponde:");
@@ -613,13 +613,13 @@ int enigmas1()
                         scanf (" %c",&a1);//Funcion scanf para almacenar la respuesta del jugador
                             if (a1!='1'&&a1!='2'&&a1!='3'&&a1!='1'&&a1!='2'&&a1!='3')
                                 {
-                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t");
+                                    printf ("\n\n\tEleccion invalida!!\tElige nuevamente\n\n\t");//comprobacion de que la eleccion del jugador esta dentro de las opciones
                                 }
-                      }while(a1!='1'&&a1!='2'&&a1!='3'&&a1!='1'&&a1!='2'&&a1!='3');
-                    if(a1=='3')
+                      }while(a1!='1'&&a1!='2'&&a1!='3'&&a1!='1'&&a1!='2'&&a1!='3');//Bucle que se repite hasta que el jugador seleccione una opcion valida
+                    if(a1=='3')//Sentencia condicional if que compara la respuesta del jugador con las posibles respuestas correctas
                       {
                         printf ("\n\n\tRESPUESTA CORRECTA!!!\n\n");
-                        ptos1++;
+                        ptos1++;//contador de enigmas completados
                       }
                     else
                       {
@@ -628,7 +628,7 @@ int enigmas1()
 
                 delay(2);
 
-                    if(ptos1>=3)
+                    if(ptos1>=3)//Sentencia condicional if que comprueba que el jugador logro completar todos los enigmas
                       {
                         printf("\n\n\tFELICIDADES LOGRASTE COMPLETAR TODOS LOS ENIGMAS!!!\n\n");
                         printf("\tPASAS A LA SIGUIENTE PRUEBA\n");
@@ -639,40 +639,40 @@ int enigmas1()
                         printf("\tTENDRAS QUE VOLVER A EMPEZAR\n");
                       }
                 delay (4);
-              }while(ptos1<=2);
+              }while(ptos1<=2);//Bucle que se repite hasta que el jugador logre completar todos los enigmas
 
 
                 printf("\n\n\n\n\n\n\n\n");
             do{
-                    if(e=='1')
+                    if(e=='1')//sentencia condicional para que se imprima el fichero luz
                         {
-                            peluche =fopen("Proyecto/luz.txt","r");
+                            peluche =fopen("Proyecto/luz.txt","r");//Apertura, impresion y cierre del fichero con la siguiente prueba
                             imprime1(peluche,0);
                             fclose(peluche);
                             delay(5);
                             printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                            printf("\n\n\t..Necesitas ver de nuevo?...\n\n1.si\n\n2.no\n\n\n\n\n\n\n\t");
+                            printf("\n\n\t..Necesitas ver de nuevo?...\n\n1.si\n\n2.no\n\n\n\n\n\n\n\t");//Pregunta al usuario si es necesario ver nuevamente el contenido del fichero
                             e=0;
                         }
-                scanf(" %c",&e);
-                    if (e!='1'&& e!='2')
+                scanf(" %c",&e);//Funcion scanf que almacena la respuesta del jugador para despues ejecutar la sentencia condicional
+                    if (e!='1'&& e!='2')//Sentencia condicional que comprueba si la eleccion del jugador esta dentro de las opciones mostradas
                         {
                             printf ("\n\n\tElige nuevamente\n\n\n\n\n\n\n\t");
                         }
 
-              }while (e!='2');
+              }while (e!='2');//Bucle que se repite hasta que el jugador elija una opcion valida
 
                 printf("\n\n\n\n\n\n");
             do{
                 printf ("\n\n\tDigita el codigo oculto....\n\n\t");
-                scanf("%i",&cod1);
-                    if (cod1==cod)
+                scanf("%i",&cod1);//Funcion scanf que almacena la respuesta del jugador para despues ejecutar la sentencia condicional
+                    if (cod1==cod)//Sentencia condicional que comprueba si la respuesta del jugador es la correcta.
                         {
                             printf ("\n\n\tFELICIDADES HAS CONSEGUIDO PASAR A LA SIGUIENTE PRUEBA!!!");
                         }
                     else
                             printf ("\n\n\tERROR!!! CODIGO INCORRECTO...");
-              }while(cod1!=cod);
+              }while(cod1!=cod);//Bucle que se repite hasta que el jugador digite el codigo correcto
             delay(3);
  return 0;
 
