@@ -14,3 +14,4 @@ Pedro 		  		 1104.399902
 Jose 		 Facil 		 180.000000
 jose 		 Facil 		 422.000000
 l 		 Facil 		 441.000000
+luis 		 Facil 		 948.000000

@@ -19,6 +19,8 @@ while((a!='1')){
     if(a=='2')return 0;
  }
 }
+
+oscuridad1();
 puntuacion = puntuacion  + (50-ice_cave()*dificultad);
 puntuacion = puntuacion  + (60-candado()*dificultad);
 puntuacion = puntuacion  + (300-laberinto()*dificultad);
