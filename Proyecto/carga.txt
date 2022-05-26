@@ -9,8 +9,7 @@
 
 
                                             cargando[.............]
-
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -38,8 +37,7 @@
 
 
                                             cargando[o............]
-
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -67,8 +65,7 @@
 
 
                                             cargando[oo...........]
-
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -96,8 +93,7 @@
 
 
                                             cargando[ooo..........]
-
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -125,7 +121,7 @@
 
 
                                             cargando[oooo.........]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -154,7 +150,7 @@
 
 
                                             cargando[ooooo........]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -183,7 +179,7 @@
 
 
                                             cargando[oooooo.......]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -212,7 +208,7 @@
 
 
                                             cargando[ooooooo......]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -241,7 +237,7 @@
 
 
                                             cargando[oooooooo.....]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -270,7 +266,7 @@
 
 
                                             cargando[ooooooooo....]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -299,7 +295,7 @@
 
 
                                             cargando[oooooooooo...]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -328,7 +324,7 @@
 
 
                                             cargando[ooooooooooo..]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -357,7 +353,7 @@
 
 
                                             cargando[oooooooooooo.]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 
@@ -386,7 +382,7 @@
 
 
                                             cargando[ooooooooooooo]
-
+                            (recuerda que puedes ajustar la pantalla desde los ajustes)
 
 
 

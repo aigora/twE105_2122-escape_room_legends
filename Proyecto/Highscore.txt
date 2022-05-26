@@ -23,4 +23,5 @@
 Nombre:          Dificultad:          Puntuacion:
 
 paco 		 Muy Dificil 	    	990.00
-Alex_go          Facil 	 		717.00
+Alex_go                  Facil 	 	717.00
+Gonzalo 		 Facil 		 723.00

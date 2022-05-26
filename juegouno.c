@@ -24,9 +24,9 @@ void imprimefn(char *pf,int x,int y,int xmax,int xmin,int ymax,int ymin,int N)
                 if(x==i&&y==j) printf("    ");
                 else
                 {
-                    if(*(pf + i*N + j )=='M')printf("%c%c%c%c", 219,219,219,219);
-                    if(*(pf + i*N + j )=='.')printf("%c%c%c%c", 177,177,177,177);
-                    if(*(pf + i*N + j )=='/')printf("%c%c%c%c", 178,178,178,178);
+                    if(*(pf + i*N + j )=='M')printf("%s%s%s%s", "\u2588", "\u2588", "\u2588", "\u2588");
+                    if(*(pf + i*N + j )=='.')printf("%s%s%s%s", "\u2592","\u2592","\u2592","\u2592");
+                    if(*(pf + i*N + j )=='/')printf("%s%s%s%s", "\u2593","\u2593","\u2593","\u2593");
                 }
             }
             printf("\n");
@@ -679,9 +679,12 @@ char usuario[20];
 delay(2);
 FILE *pf;
 int puntuacion=puntuacionf;
+//imprimimos la pantalla final con la puntuacion del jugadfor
 pf=fopen("Proyecto/final.txt","r");
 imprime(pf,puntuacion);
+//le pedimos al usuario su nick para guardarlo en el archivo
 scanf("%s",usuario);
+//guardamos en el archivo el usuario , la puntuacion y la dificultrad, como teniamos problemas con que la dificultad fuese un floa(puede ser 1,1.2,1.4,1.5) lo multiplicamos por 10 parfa que pierda la parte decimal(es una solucion cutre pero era la mas sencilla)
 highscore(usuario,diff*10,puntuacionf);
 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nENHORABUENA %s, HAS COMPLETADO EL JUEGO. YA PUEDES CERRAR EL JUEGO." , usuario);
 }
